@@ -1,0 +1,1401 @@
+2022-12-18T00:00:30Z INFO This program will set up FreeIPA client.
+2022-12-18T00:00:30Z INFO Version 4.10.1
+2022-12-18T00:00:30Z INFO 
+2022-12-18T00:00:30Z DEBUG Starting external process
+2022-12-18T00:00:30Z DEBUG args=['/usr/sbin/selinuxenabled']
+2022-12-18T00:00:30Z DEBUG Process finished, return code=0
+2022-12-18T00:00:30Z DEBUG stdout=
+2022-12-18T00:00:30Z DEBUG stderr=
+2022-12-18T00:00:30Z WARNING Using existing certificate '/etc/ipa/ca.crt'.
+2022-12-18T00:00:30Z DEBUG [IPA Discovery]
+2022-12-18T00:00:30Z DEBUG Starting IPA discovery with domain=redacted_domain.com, servers=['master.redacted_domain.com'], hostname=master.redacted_domain.com
+2022-12-18T00:00:30Z DEBUG Server and domain forced
+2022-12-18T00:00:30Z DEBUG [Kerberos realm search]
+2022-12-18T00:00:30Z DEBUG Kerberos realm forced
+2022-12-18T00:00:30Z DEBUG [LDAP server check]
+2022-12-18T00:00:30Z DEBUG Verifying that master.redacted_domain.com (realm REDACTED_DOMAIN.COM) is an IPA server
+2022-12-18T00:00:30Z DEBUG Init LDAP connection to: ldap://master.redacted_domain.com:389
+2022-12-18T00:00:30Z DEBUG Search LDAP server for IPA base DN
+2022-12-18T00:00:30Z DEBUG Check if naming context 'dc=redacted_domain,dc=com' is for IPA
+2022-12-18T00:00:30Z DEBUG Naming context 'dc=redacted_domain,dc=com' is a valid IPA context
+2022-12-18T00:00:30Z DEBUG Search for (objectClass=krbRealmContainer) in dc=redacted_domain,dc=com (sub)
+2022-12-18T00:00:30Z DEBUG Found: cn=REDACTED_DOMAIN.COM,cn=kerberos,dc=redacted_domain,dc=com
+2022-12-18T00:00:30Z DEBUG Discovery result: Success; server=master.redacted_domain.com, domain=redacted_domain.com, kdc=master.redacted_domain.com, basedn=dc=redacted_domain,dc=com
+2022-12-18T00:00:30Z DEBUG Validated servers: master.redacted_domain.com
+2022-12-18T00:00:30Z DEBUG will use discovered domain: redacted_domain.com
+2022-12-18T00:00:30Z DEBUG Using servers from command line, disabling DNS discovery
+2022-12-18T00:00:30Z DEBUG will use provided server: master.redacted_domain.com
+2022-12-18T00:00:30Z DEBUG will use discovered realm: REDACTED_DOMAIN.COM
+2022-12-18T00:00:30Z DEBUG will use discovered basedn: dc=redacted_domain,dc=com
+2022-12-18T00:00:30Z INFO Client hostname: master.redacted_domain.com
+2022-12-18T00:00:30Z DEBUG Hostname source: Provided as option
+2022-12-18T00:00:30Z INFO Realm: REDACTED_DOMAIN.COM
+2022-12-18T00:00:30Z DEBUG Realm source: Discovered from LDAP DNS records in master.redacted_domain.com
+2022-12-18T00:00:30Z INFO DNS Domain: redacted_domain.com
+2022-12-18T00:00:30Z DEBUG DNS Domain source: Forced
+2022-12-18T00:00:30Z INFO IPA Server: master.redacted_domain.com
+2022-12-18T00:00:30Z DEBUG IPA Server source: Provided as option
+2022-12-18T00:00:30Z INFO BaseDN: dc=redacted_domain,dc=com
+2022-12-18T00:00:30Z DEBUG BaseDN source: From IPA server ldap://master.redacted_domain.com:389
+2022-12-18T00:00:32Z DEBUG Loading Index file from '/var/lib/ipa-client/sysrestore/sysrestore.index'
+2022-12-18T00:00:32Z DEBUG Loading StateFile from '/var/lib/ipa-client/sysrestore/sysrestore.state'
+2022-12-18T00:00:32Z INFO Skipping attempt to configure and synchronize time with chrony server as it has been already done on master.
+2022-12-18T00:00:34Z DEBUG Initializing principal host/master.redacted_domain.com@REDACTED_DOMAIN.COM using keytab /etc/krb5.keytab
+2022-12-18T00:00:34Z DEBUG using ccache /etc/ipa/.dns_ccache
+2022-12-18T00:00:34Z DEBUG Attempt 1/5: success
+2022-12-18T00:00:34Z DEBUG Starting external process
+2022-12-18T00:00:34Z DEBUG args=['/usr/bin/ipa', 'ping']
+2022-12-18T00:00:35Z DEBUG Process finished, return code=0
+2022-12-18T00:00:35Z DEBUG stdout=--------------------------------------------
+IPA server version 4.10.1. API version 2.251
+--------------------------------------------
+
+2022-12-18T00:00:35Z DEBUG stderr=
+2022-12-18T00:00:38Z DEBUG Loading Index file from '/var/lib/ipa-client/sysrestore/sysrestore.index'
+2022-12-18T00:00:38Z DEBUG New SSSD config will be created
+2022-12-18T00:00:38Z INFO Configured /etc/sssd/sssd.conf
+2022-12-18T00:00:40Z DEBUG Starting external process
+2022-12-18T00:00:40Z DEBUG args=['/usr/bin/certutil', '-d', '/tmp/tmp7pwmuxno', '-N', '-f', '/tmp/tmp7pwmuxno/pwdfile.txt', '-@', '/tmp/tmp7pwmuxno/pwdfile.txt']
+2022-12-18T00:00:40Z DEBUG Process finished, return code=0
+2022-12-18T00:00:40Z DEBUG stdout=
+2022-12-18T00:00:40Z DEBUG stderr=
+2022-12-18T00:00:40Z DEBUG Starting external process
+2022-12-18T00:00:40Z DEBUG args=['/usr/sbin/selinuxenabled']
+2022-12-18T00:00:40Z DEBUG Process finished, return code=0
+2022-12-18T00:00:40Z DEBUG stdout=
+2022-12-18T00:00:40Z DEBUG stderr=
+2022-12-18T00:00:40Z DEBUG Starting external process
+2022-12-18T00:00:40Z DEBUG args=['/sbin/restorecon', '-F', '/tmp/tmp7pwmuxno']
+2022-12-18T00:00:40Z DEBUG Process finished, return code=0
+2022-12-18T00:00:40Z DEBUG stdout=Warning no default label for /tmp/tmp7pwmuxno
+
+2022-12-18T00:00:40Z DEBUG stderr=
+2022-12-18T00:00:40Z DEBUG Starting external process
+2022-12-18T00:00:40Z DEBUG args=['/usr/sbin/selinuxenabled']
+2022-12-18T00:00:40Z DEBUG Process finished, return code=0
+2022-12-18T00:00:40Z DEBUG stdout=
+2022-12-18T00:00:40Z DEBUG stderr=
+2022-12-18T00:00:40Z DEBUG Starting external process
+2022-12-18T00:00:40Z DEBUG args=['/sbin/restorecon', '-F', '/tmp/tmp7pwmuxno/cert9.db']
+2022-12-18T00:00:40Z DEBUG Process finished, return code=0
+2022-12-18T00:00:40Z DEBUG stdout=Warning no default label for /tmp/tmp7pwmuxno/cert9.db
+
+2022-12-18T00:00:40Z DEBUG stderr=
+2022-12-18T00:00:40Z DEBUG Starting external process
+2022-12-18T00:00:40Z DEBUG args=['/usr/sbin/selinuxenabled']
+2022-12-18T00:00:40Z DEBUG Process finished, return code=0
+2022-12-18T00:00:40Z DEBUG stdout=
+2022-12-18T00:00:40Z DEBUG stderr=
+2022-12-18T00:00:40Z DEBUG Starting external process
+2022-12-18T00:00:40Z DEBUG args=['/sbin/restorecon', '-F', '/tmp/tmp7pwmuxno/key4.db']
+2022-12-18T00:00:40Z DEBUG Process finished, return code=0
+2022-12-18T00:00:40Z DEBUG stdout=Warning no default label for /tmp/tmp7pwmuxno/key4.db
+
+2022-12-18T00:00:40Z DEBUG stderr=
+2022-12-18T00:00:40Z DEBUG Starting external process
+2022-12-18T00:00:40Z DEBUG args=['/usr/sbin/selinuxenabled']
+2022-12-18T00:00:40Z DEBUG Process finished, return code=0
+2022-12-18T00:00:40Z DEBUG stdout=
+2022-12-18T00:00:40Z DEBUG stderr=
+2022-12-18T00:00:40Z DEBUG Starting external process
+2022-12-18T00:00:40Z DEBUG args=['/sbin/restorecon', '-F', '/tmp/tmp7pwmuxno/pkcs11.txt']
+2022-12-18T00:00:40Z DEBUG Process finished, return code=0
+2022-12-18T00:00:40Z DEBUG stdout=Warning no default label for /tmp/tmp7pwmuxno/pkcs11.txt
+
+2022-12-18T00:00:40Z DEBUG stderr=
+2022-12-18T00:00:40Z DEBUG Starting external process
+2022-12-18T00:00:40Z DEBUG args=['/usr/sbin/selinuxenabled']
+2022-12-18T00:00:40Z DEBUG Process finished, return code=0
+2022-12-18T00:00:40Z DEBUG stdout=
+2022-12-18T00:00:40Z DEBUG stderr=
+2022-12-18T00:00:40Z DEBUG Starting external process
+2022-12-18T00:00:40Z DEBUG args=['/sbin/restorecon', '-F', '/tmp/tmp7pwmuxno/pwdfile.txt']
+2022-12-18T00:00:40Z DEBUG Process finished, return code=0
+2022-12-18T00:00:40Z DEBUG stdout=Warning no default label for /tmp/tmp7pwmuxno/pwdfile.txt
+
+2022-12-18T00:00:40Z DEBUG stderr=
+2022-12-18T00:00:40Z DEBUG Starting external process
+2022-12-18T00:00:40Z DEBUG args=['/usr/bin/certutil', '-d', 'sql:/tmp/tmp7pwmuxno', '-A', '-n', 'CA certificate 1', '-t', 'C,,', '-a', '-f', '/tmp/tmp7pwmuxno/pwdfile.txt']
+2022-12-18T00:00:40Z DEBUG Process finished, return code=0
+2022-12-18T00:00:40Z DEBUG stdout=
+2022-12-18T00:00:40Z DEBUG stderr=
+2022-12-18T00:00:40Z DEBUG failed to find session_cookie in persistent storage for principal 'host/master.redacted_domain.com@REDACTED_DOMAIN.COM'
+2022-12-18T00:00:40Z DEBUG trying https://master.redacted_domain.com/ipa/json
+2022-12-18T00:00:40Z DEBUG Created connection context.rpcclient_139797378166928
+2022-12-18T00:00:40Z DEBUG [try 1]: Forwarding 'schema' to json server 'https://master.redacted_domain.com/ipa/json'
+2022-12-18T00:00:40Z DEBUG New HTTP connection (master.redacted_domain.com)
+2022-12-18T00:00:40Z DEBUG received Set-Cookie (<class 'list'>)'['ipa_session=MagBearerToken=EdasHoavvEYlP9NMV9dDVnVYqZFaJwv9V7MGkq2H7h6bt8sROzyDXaz%2fZ4BWqovwyu4doYqyxEAHrwEx6ttt%2bEo9789fwlz6YCw%2fSaU1DfjujDtsHOR4Fd3IXlYiXUP0aFuh%2bcE4yJcuW5qO5GEK5RlhiihBUg%2fHNqHmoZBhoc9IDyj4U6mpUnGywpgms4WqCKJmjn3wreC2SMKuJEXYp%2bU7Chq0SGxJZbiCboIP0dJ3OTQ3tLVvz%2bH3pFRa7AlswqdA2IYlYld6%2fw9i6bhiB3zTuPjY%2fWq9IqKDvFCxYN9qMloIcRsmNewntA8buclE;path=/ipa;httponly;secure;']'
+2022-12-18T00:00:40Z DEBUG storing cookie 'ipa_session=MagBearerToken=EdasHoavvEYlP9NMV9dDVnVYqZFaJwv9V7MGkq2H7h6bt8sROzyDXaz%2fZ4BWqovwyu4doYqyxEAHrwEx6ttt%2bEo9789fwlz6YCw%2fSaU1DfjujDtsHOR4Fd3IXlYiXUP0aFuh%2bcE4yJcuW5qO5GEK5RlhiihBUg%2fHNqHmoZBhoc9IDyj4U6mpUnGywpgms4WqCKJmjn3wreC2SMKuJEXYp%2bU7Chq0SGxJZbiCboIP0dJ3OTQ3tLVvz%2bH3pFRa7AlswqdA2IYlYld6%2fw9i6bhiB3zTuPjY%2fWq9IqKDvFCxYN9qMloIcRsmNewntA8buclE;' for principal host/master.redacted_domain.com@REDACTED_DOMAIN.COM
+2022-12-18T00:00:40Z DEBUG Destroyed connection context.rpcclient_139797378166928
+2022-12-18T00:00:40Z DEBUG importing all plugin modules in ipaclient.remote_plugins.schema$8182589c...
+2022-12-18T00:00:40Z DEBUG importing plugin module ipaclient.remote_plugins.schema$8182589c.plugins
+2022-12-18T00:00:40Z DEBUG importing all plugin modules in ipaclient.plugins...
+2022-12-18T00:00:40Z DEBUG importing plugin module ipaclient.plugins.automember
+2022-12-18T00:00:40Z DEBUG importing plugin module ipaclient.plugins.automount
+2022-12-18T00:00:40Z DEBUG importing plugin module ipaclient.plugins.ca
+2022-12-18T00:00:40Z DEBUG importing plugin module ipaclient.plugins.cert
+2022-12-18T00:00:40Z DEBUG importing plugin module ipaclient.plugins.certmap
+2022-12-18T00:00:40Z DEBUG importing plugin module ipaclient.plugins.certprofile
+2022-12-18T00:00:40Z DEBUG importing plugin module ipaclient.plugins.dns
+2022-12-18T00:00:40Z DEBUG importing plugin module ipaclient.plugins.hbacrule
+2022-12-18T00:00:40Z DEBUG importing plugin module ipaclient.plugins.hbactest
+2022-12-18T00:00:40Z DEBUG importing plugin module ipaclient.plugins.host
+2022-12-18T00:00:40Z DEBUG importing plugin module ipaclient.plugins.idrange
+2022-12-18T00:00:40Z DEBUG importing plugin module ipaclient.plugins.internal
+2022-12-18T00:00:40Z DEBUG importing plugin module ipaclient.plugins.location
+2022-12-18T00:00:40Z DEBUG importing plugin module ipaclient.plugins.migration
+2022-12-18T00:00:40Z DEBUG importing plugin module ipaclient.plugins.misc
+2022-12-18T00:00:40Z DEBUG importing plugin module ipaclient.plugins.otptoken
+2022-12-18T00:00:40Z DEBUG importing plugin module ipaclient.plugins.otptoken_yubikey
+2022-12-18T00:00:40Z DEBUG importing plugin module ipaclient.plugins.passwd
+2022-12-18T00:00:40Z DEBUG importing plugin module ipaclient.plugins.permission
+2022-12-18T00:00:40Z DEBUG importing plugin module ipaclient.plugins.rpcclient
+2022-12-18T00:00:40Z DEBUG importing plugin module ipaclient.plugins.server
+2022-12-18T00:00:40Z DEBUG importing plugin module ipaclient.plugins.service
+2022-12-18T00:00:40Z DEBUG importing plugin module ipaclient.plugins.sudorule
+2022-12-18T00:00:40Z DEBUG importing plugin module ipaclient.plugins.topology
+2022-12-18T00:00:40Z DEBUG importing plugin module ipaclient.plugins.trust
+2022-12-18T00:00:40Z DEBUG importing plugin module ipaclient.plugins.user
+2022-12-18T00:00:40Z DEBUG importing plugin module ipaclient.plugins.vault
+2022-12-18T00:00:41Z DEBUG found session_cookie in persistent storage for principal 'host/master.redacted_domain.com@REDACTED_DOMAIN.COM', cookie: 'ipa_session=MagBearerToken=EdasHoavvEYlP9NMV9dDVnVYqZFaJwv9V7MGkq2H7h6bt8sROzyDXaz%2fZ4BWqovwyu4doYqyxEAHrwEx6ttt%2bEo9789fwlz6YCw%2fSaU1DfjujDtsHOR4Fd3IXlYiXUP0aFuh%2bcE4yJcuW5qO5GEK5RlhiihBUg%2fHNqHmoZBhoc9IDyj4U6mpUnGywpgms4WqCKJmjn3wreC2SMKuJEXYp%2bU7Chq0SGxJZbiCboIP0dJ3OTQ3tLVvz%2bH3pFRa7AlswqdA2IYlYld6%2fw9i6bhiB3zTuPjY%2fWq9IqKDvFCxYN9qMloIcRsmNewntA8buclE'
+2022-12-18T00:00:41Z DEBUG setting session_cookie into context 'ipa_session=MagBearerToken=EdasHoavvEYlP9NMV9dDVnVYqZFaJwv9V7MGkq2H7h6bt8sROzyDXaz%2fZ4BWqovwyu4doYqyxEAHrwEx6ttt%2bEo9789fwlz6YCw%2fSaU1DfjujDtsHOR4Fd3IXlYiXUP0aFuh%2bcE4yJcuW5qO5GEK5RlhiihBUg%2fHNqHmoZBhoc9IDyj4U6mpUnGywpgms4WqCKJmjn3wreC2SMKuJEXYp%2bU7Chq0SGxJZbiCboIP0dJ3OTQ3tLVvz%2bH3pFRa7AlswqdA2IYlYld6%2fw9i6bhiB3zTuPjY%2fWq9IqKDvFCxYN9qMloIcRsmNewntA8buclE;'
+2022-12-18T00:00:41Z DEBUG trying https://master.redacted_domain.com/ipa/session/json
+2022-12-18T00:00:41Z DEBUG Created connection context.rpcclient_139797359761936
+2022-12-18T00:00:41Z DEBUG [try 1]: Forwarding 'ping' to json server 'https://master.redacted_domain.com/ipa/session/json'
+2022-12-18T00:00:41Z DEBUG New HTTP connection (master.redacted_domain.com)
+2022-12-18T00:00:41Z DEBUG [try 1]: Forwarding 'ca_is_enabled' to json server 'https://master.redacted_domain.com/ipa/session/json'
+2022-12-18T00:00:41Z DEBUG HTTP connection keep-alive (master.redacted_domain.com)
+2022-12-18T00:00:41Z DEBUG raw: config_show(version='2.251')
+2022-12-18T00:00:41Z DEBUG config_show(version='2.251')
+2022-12-18T00:00:41Z DEBUG [try 1]: Forwarding 'config_show/1' to json server 'https://master.redacted_domain.com/ipa/session/json'
+2022-12-18T00:00:41Z DEBUG HTTP connection keep-alive (master.redacted_domain.com)
+2022-12-18T00:00:43Z DEBUG Loading Index file from '/var/lib/ipa-client/sysrestore/sysrestore.index'
+2022-12-18T00:00:43Z DEBUG Loading StateFile from '/var/lib/ipa-client/sysrestore/sysrestore.state'
+2022-12-18T00:00:43Z DEBUG importing all plugin modules in ipaclient.remote_plugins.schema$8182589c...
+2022-12-18T00:00:43Z DEBUG importing plugin module ipaclient.remote_plugins.schema$8182589c.plugins
+2022-12-18T00:00:43Z DEBUG importing all plugin modules in ipaclient.plugins...
+2022-12-18T00:00:43Z DEBUG importing plugin module ipaclient.plugins.automember
+2022-12-18T00:00:43Z DEBUG importing plugin module ipaclient.plugins.automount
+2022-12-18T00:00:43Z DEBUG importing plugin module ipaclient.plugins.ca
+2022-12-18T00:00:43Z DEBUG importing plugin module ipaclient.plugins.cert
+2022-12-18T00:00:43Z DEBUG importing plugin module ipaclient.plugins.certmap
+2022-12-18T00:00:43Z DEBUG importing plugin module ipaclient.plugins.certprofile
+2022-12-18T00:00:43Z DEBUG importing plugin module ipaclient.plugins.dns
+2022-12-18T00:00:43Z DEBUG importing plugin module ipaclient.plugins.hbacrule
+2022-12-18T00:00:43Z DEBUG importing plugin module ipaclient.plugins.hbactest
+2022-12-18T00:00:43Z DEBUG importing plugin module ipaclient.plugins.host
+2022-12-18T00:00:43Z DEBUG importing plugin module ipaclient.plugins.idrange
+2022-12-18T00:00:43Z DEBUG importing plugin module ipaclient.plugins.internal
+2022-12-18T00:00:43Z DEBUG importing plugin module ipaclient.plugins.location
+2022-12-18T00:00:43Z DEBUG importing plugin module ipaclient.plugins.migration
+2022-12-18T00:00:43Z DEBUG importing plugin module ipaclient.plugins.misc
+2022-12-18T00:00:43Z DEBUG importing plugin module ipaclient.plugins.otptoken
+2022-12-18T00:00:43Z DEBUG importing plugin module ipaclient.plugins.otptoken_yubikey
+2022-12-18T00:00:43Z DEBUG importing plugin module ipaclient.plugins.passwd
+2022-12-18T00:00:43Z DEBUG importing plugin module ipaclient.plugins.permission
+2022-12-18T00:00:43Z DEBUG importing plugin module ipaclient.plugins.rpcclient
+2022-12-18T00:00:43Z DEBUG importing plugin module ipaclient.plugins.server
+2022-12-18T00:00:43Z DEBUG importing plugin module ipaclient.plugins.service
+2022-12-18T00:00:43Z DEBUG importing plugin module ipaclient.plugins.sudorule
+2022-12-18T00:00:43Z DEBUG importing plugin module ipaclient.plugins.topology
+2022-12-18T00:00:43Z DEBUG importing plugin module ipaclient.plugins.trust
+2022-12-18T00:00:43Z DEBUG importing plugin module ipaclient.plugins.user
+2022-12-18T00:00:43Z DEBUG importing plugin module ipaclient.plugins.vault
+2022-12-18T00:00:44Z DEBUG found session_cookie in persistent storage for principal 'host/master.redacted_domain.com@REDACTED_DOMAIN.COM', cookie: 'ipa_session=MagBearerToken=EdasHoavvEYlP9NMV9dDVnVYqZFaJwv9V7MGkq2H7h6bt8sROzyDXaz%2fZ4BWqovwyu4doYqyxEAHrwEx6ttt%2bEo9789fwlz6YCw%2fSaU1DfjujDtsHOR4Fd3IXlYiXUP0aFuh%2bcE4yJcuW5qO5GEK5RlhiihBUg%2fHNqHmoZBhoc9IDyj4U6mpUnGywpgms4WqCKJmjn3wreC2SMKuJEXYp%2bU7Chq0SGxJZbiCboIP0dJ3OTQ3tLVvz%2bH3pFRa7AlswqdA2IYlYld6%2fw9i6bhiB3zTuPjY%2fWq9IqKDvFCxYN9qMloIcRsmNewntA8buclE'
+2022-12-18T00:00:44Z DEBUG setting session_cookie into context 'ipa_session=MagBearerToken=EdasHoavvEYlP9NMV9dDVnVYqZFaJwv9V7MGkq2H7h6bt8sROzyDXaz%2fZ4BWqovwyu4doYqyxEAHrwEx6ttt%2bEo9789fwlz6YCw%2fSaU1DfjujDtsHOR4Fd3IXlYiXUP0aFuh%2bcE4yJcuW5qO5GEK5RlhiihBUg%2fHNqHmoZBhoc9IDyj4U6mpUnGywpgms4WqCKJmjn3wreC2SMKuJEXYp%2bU7Chq0SGxJZbiCboIP0dJ3OTQ3tLVvz%2bH3pFRa7AlswqdA2IYlYld6%2fw9i6bhiB3zTuPjY%2fWq9IqKDvFCxYN9qMloIcRsmNewntA8buclE;'
+2022-12-18T00:00:44Z DEBUG trying https://master.redacted_domain.com/ipa/session/json
+2022-12-18T00:00:44Z DEBUG Created connection context.rpcclient_140587282742224
+2022-12-18T00:00:44Z DEBUG [try 1]: Forwarding 'ping' to json server 'https://master.redacted_domain.com/ipa/session/json'
+2022-12-18T00:00:44Z DEBUG New HTTP connection (master.redacted_domain.com)
+2022-12-18T00:00:44Z DEBUG Starting external process
+2022-12-18T00:00:44Z DEBUG args=['/usr/bin/certutil', '-d', '/etc/ipa/nssdb', '-N', '-f', '/etc/ipa/nssdb/pwdfile.txt', '-@', '/etc/ipa/nssdb/pwdfile.txt']
+2022-12-18T00:00:44Z DEBUG Process finished, return code=0
+2022-12-18T00:00:44Z DEBUG stdout=
+2022-12-18T00:00:44Z DEBUG stderr=
+2022-12-18T00:00:44Z DEBUG Starting external process
+2022-12-18T00:00:44Z DEBUG args=['/usr/sbin/selinuxenabled']
+2022-12-18T00:00:44Z DEBUG Process finished, return code=0
+2022-12-18T00:00:44Z DEBUG stdout=
+2022-12-18T00:00:44Z DEBUG stderr=
+2022-12-18T00:00:44Z DEBUG Starting external process
+2022-12-18T00:00:44Z DEBUG args=['/sbin/restorecon', '-F', '/etc/ipa/nssdb']
+2022-12-18T00:00:44Z DEBUG Process finished, return code=0
+2022-12-18T00:00:44Z DEBUG stdout=
+2022-12-18T00:00:44Z DEBUG stderr=
+2022-12-18T00:00:44Z DEBUG Starting external process
+2022-12-18T00:00:44Z DEBUG args=['/usr/sbin/selinuxenabled']
+2022-12-18T00:00:44Z DEBUG Process finished, return code=0
+2022-12-18T00:00:44Z DEBUG stdout=
+2022-12-18T00:00:44Z DEBUG stderr=
+2022-12-18T00:00:44Z DEBUG Starting external process
+2022-12-18T00:00:44Z DEBUG args=['/sbin/restorecon', '-F', '/etc/ipa/nssdb/cert9.db']
+2022-12-18T00:00:44Z DEBUG Process finished, return code=0
+2022-12-18T00:00:44Z DEBUG stdout=
+2022-12-18T00:00:44Z DEBUG stderr=
+2022-12-18T00:00:44Z DEBUG Starting external process
+2022-12-18T00:00:44Z DEBUG args=['/usr/sbin/selinuxenabled']
+2022-12-18T00:00:44Z DEBUG Process finished, return code=0
+2022-12-18T00:00:44Z DEBUG stdout=
+2022-12-18T00:00:44Z DEBUG stderr=
+2022-12-18T00:00:44Z DEBUG Starting external process
+2022-12-18T00:00:44Z DEBUG args=['/sbin/restorecon', '-F', '/etc/ipa/nssdb/key4.db']
+2022-12-18T00:00:44Z DEBUG Process finished, return code=0
+2022-12-18T00:00:44Z DEBUG stdout=
+2022-12-18T00:00:44Z DEBUG stderr=
+2022-12-18T00:00:44Z DEBUG Starting external process
+2022-12-18T00:00:44Z DEBUG args=['/usr/sbin/selinuxenabled']
+2022-12-18T00:00:44Z DEBUG Process finished, return code=0
+2022-12-18T00:00:44Z DEBUG stdout=
+2022-12-18T00:00:44Z DEBUG stderr=
+2022-12-18T00:00:44Z DEBUG Starting external process
+2022-12-18T00:00:44Z DEBUG args=['/sbin/restorecon', '-F', '/etc/ipa/nssdb/pkcs11.txt']
+2022-12-18T00:00:44Z DEBUG Process finished, return code=0
+2022-12-18T00:00:44Z DEBUG stdout=
+2022-12-18T00:00:44Z DEBUG stderr=
+2022-12-18T00:00:44Z DEBUG Starting external process
+2022-12-18T00:00:44Z DEBUG args=['/usr/sbin/selinuxenabled']
+2022-12-18T00:00:44Z DEBUG Process finished, return code=0
+2022-12-18T00:00:44Z DEBUG stdout=
+2022-12-18T00:00:44Z DEBUG stderr=
+2022-12-18T00:00:44Z DEBUG Starting external process
+2022-12-18T00:00:44Z DEBUG args=['/sbin/restorecon', '-F', '/etc/ipa/nssdb/pwdfile.txt']
+2022-12-18T00:00:44Z DEBUG Process finished, return code=0
+2022-12-18T00:00:44Z DEBUG stdout=
+2022-12-18T00:00:44Z DEBUG stderr=
+2022-12-18T00:00:44Z DEBUG retrieving schema for SchemaCache url=ldap://master.redacted_domain.com:389 conn=<ldap.ldapobject.SimpleLDAPObject object at 0x7fdd06d11b50>
+2022-12-18T00:00:44Z DEBUG Adding CA certificates to the IPA NSS database.
+2022-12-18T00:00:44Z DEBUG Starting external process
+2022-12-18T00:00:44Z DEBUG args=['/usr/bin/certutil', '-d', 'sql:/etc/ipa/nssdb', '-A', '-n', 'REDACTED_DOMAIN.COM IPA CA', '-t', 'CT,C,C', '-a', '-f', '/etc/ipa/nssdb/pwdfile.txt']
+2022-12-18T00:00:45Z DEBUG Process finished, return code=0
+2022-12-18T00:00:45Z DEBUG stdout=
+2022-12-18T00:00:45Z DEBUG stderr=
+2022-12-18T00:00:45Z DEBUG Starting external process
+2022-12-18T00:00:45Z DEBUG args=['/usr/bin/update-ca-trust']
+2022-12-18T00:00:46Z DEBUG Process finished, return code=0
+2022-12-18T00:00:46Z DEBUG stdout=
+2022-12-18T00:00:46Z DEBUG stderr=
+2022-12-18T00:00:46Z INFO Systemwide CA database updated.
+2022-12-18T00:00:46Z INFO Adding SSH public key from /etc/ssh/ssh_host_ecdsa_key.pub
+2022-12-18T00:00:46Z INFO Adding SSH public key from /etc/ssh/ssh_host_ed25519_key.pub
+2022-12-18T00:00:46Z INFO Adding SSH public key from /etc/ssh/ssh_host_rsa_key.pub
+2022-12-18T00:00:46Z DEBUG [try 1]: Forwarding 'host_mod' to json server 'https://master.redacted_domain.com/ipa/session/json'
+2022-12-18T00:00:46Z DEBUG HTTP connection keep-alive (master.redacted_domain.com)
+2022-12-18T00:00:46Z DEBUG Writing nsupdate commands to /etc/ipa/.dns_update.txt:
+2022-12-18T00:00:46Z DEBUG debug
+update delete master.redacted_domain.com. IN SSHFP
+show
+send
+update add master.redacted_domain.com. 1200 IN SSHFP 3 1 DDE5526FF285A7A1C9DF6E9560595C63E87FB72B
+update add master.redacted_domain.com. 1200 IN SSHFP 3 2 CA834FA7866A7AA91D3D9103671F5816ABFFC3ACD1C1E1F9CD83460AAF2CF6F6
+update add master.redacted_domain.com. 1200 IN SSHFP 4 1 E062558C08ADEBA564E258E9E446D392F89953F3
+update add master.redacted_domain.com. 1200 IN SSHFP 4 2 56C027F5C45AA0490AA740863D55F79D479C272442644FC137288850FB061C8E
+update add master.redacted_domain.com. 1200 IN SSHFP 1 1 674E48EE0884ADCEA33917AAEE1C07DE90EB35E8
+update add master.redacted_domain.com. 1200 IN SSHFP 1 2 B11128AEBECFE3BE339618D5AFE0CC602EE4E5C5FCC8A564FB1A59104A02737E
+show
+send
+
+2022-12-18T00:00:46Z DEBUG Starting external process
+2022-12-18T00:00:46Z DEBUG args=['/usr/bin/nsupdate', '-g', '/etc/ipa/.dns_update.txt']
+2022-12-18T00:00:47Z DEBUG Process finished, return code=0
+2022-12-18T00:00:47Z DEBUG stdout=Outgoing update query:
+;; ->>HEADER<<- opcode: UPDATE, status: NOERROR, id:      0
+;; flags:; ZONE: 0, PREREQ: 0, UPDATE: 0, ADDITIONAL: 0
+;; UPDATE SECTION:
+master.redacted_domain.com. 0	ANY	SSHFP	
+
+Outgoing update query:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id:  19711
+;; flags:; QUESTION: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+;; QUESTION SECTION:
+;1140507010.sig-master.redacted_domain.com. ANY TKEY
+
+;; ADDITIONAL SECTION:
+1140507010.sig-master.redacted_domain.com. 0 ANY TKEY gss-tsig. 1671321646 1671321646 3 NOERROR 1939 YIIHjwYGKwYBBQUCoIIHgzCCB3+gDTALBgkqhkiG9xIBAgKiggdsBIIH aGCCB2QGCSqGSIb3EgECAgEAboIHUzCCB0+gAwIBBaEDAgEOogcDBQAg AAAAo4IGSmGCBkYwggZCoAMCAQWhERsPTU9OSVZBR1JPVVAuQ09Noiow KKADAgEBoSEwHxsDRE5TGxhtaWRtMDAxcC5tb25pdmFncm91cC5jb22j ggX6MIIF9qADAgESoQMCAQKiggXoBIIF5HI3H4mZ12Hyn1/iP/JRm+qQ ZWDzXemSfeKiE/J3GFupZoek7jRkqNqaALvObFvpmeqY68+8laGTF44W 0CTjHNMwhRIHxnSglV5pYWFtWbDHPWwoICeI3+1cB+OjuCfQXT06J8HJ 0bETMNaQYrtPlAiDqeFsayXW0vHFE6eYH10mSXQz4jKagSGQRtE7OTkX K99UvNRSiwHZ6UTwovgZO7+yqeLKXYEnR/iqIkfbEc+pQQN+8up7sim9 YiC0r5WJfQ0sWz0aLEROlKLJjQFrHV7jdsFVRrWtPjIf4QfcpXTZm5HS FL4p59/2WFwyhziq3o+NHO4dZqpVl79zNJGLPctfiuIpKPbCGtaQTiwo A2S2bKC8jYIC2fUE9F1F58Zd1+CqcUyWsB0N6xlXxO6hsYXVf7VzNXDR 3VnMMn9KRdXoL4N6IHdQ+cv8P45OOlid4plK5egqXI1o87TN5K1DgX4x XFOc8w53FKc80kfWwR1jSTI3S1z5S1YmhM/92zRaw1jsD2ImPea8Mk0t Yti6Jl6ZDl8E1fcme//3GubGNdP2twAQTEyJL+AzlGHCcoTHZn271gZ/ 78WXPBWIxO8of5iDmrXryu7LlQ3RLgYYrNgywtzKbpaKWa4gG/ZBH8J/ RdQEG5vlEleT2SN+fopDvlwthO8pvVSt8y3yHEk/OBUV1VfYfPYC+Qpu rbsjXmuFXDUG6lPqFYhSFjGRMeOnSO7krHX5PwKJtdU2oDWAwTlMHUfd NaWeIB6j9F4M2XaYJVfWOIbEGekCuEEZl54hGYkNXTfOYR7GRSEOxL2f kpQzU0VQCxXKPU+LR47EDaPODqmGtndx6e5QVlYMh9MUiIzsSXoTLVHe Oltrg02NlStw+6JNWhtf1BpYcCBRc/728HxBTlJHXSlZ04zZFwrRKZ3u gprKKQVWnpPXjta8pNfGb8xlcVMx+qfTOcoe74JlVB+xJdnRcXhypOyx TtmRulBZzuGAJUrX+VuyMNsIYuP6fHg/EgmQ/Q7D/xkKlm/4y8GX4jTg s7Dm9X1u9GnwHCEPqZObcWj5CMOsumRQ1tQUnUfcwBH8jQ8q6jsQAoI9 g64URG7sL+YVzYP7IaQK1p0xjx/jtbu3n17SYqDOvaPCNF5uk/LmkRCt LheDF6mcD4OJwC2du/m0Hyjy/BgzFKTmsIQVbZa5z5vuBBdhJ0hQWkNk Ad9Lcb/5okitdfLdm600oThyBGjZ8WCYBcViOOoGyFEu+lHA4Q26UYpK 8qepy6wpECY4il+VsdPE43x0yM+8UCQr/znyKsCiNyaSx04tfK8EOhQ0 /KpbkcIVBacjt9qvjQPW/LUYkctmguqKdsxVyiJHuhnz7qAWlC3dOM9t aTU/2TGgJcra9dIv/9ZYZsYH5nziHeBnO5U5cHIjfrFTZy4M4henMsxd SgWho51FCQ64TYv77TpSC95kBDSvIC/UDs8etjYQoq//nNTPzR24RT48 KEDvGo9GW0fuBg0UXksmAcVBQo2EXlJzN6MmU/t1BSYonZIbzLHLK4Vo mt4B+o0zKMpYnPpj06pnCXM9UsmBM8Dak3eKJrMp1TNi+dFd/hnoot2W ZOR/6rXwknYokUdzfbqMwIyskDssCMOcgrCoelIzsruhaplTR27drEal IsppO9PIR+4/wCHxw7Z1PlulP+f10bzejMFsj4ODvXHmsezU3YVsOqvG 1AefcJyF+G0jYga2AhJm74JTYHThx2hNYgZ63BZx5EzQL2+JaQ17h8Rk gIUU+HzTzS4tXO/b0fC2bh8BCskvA5xrYDqE5xOjKaVUCXgMX5ud1qx9 vBp16mOnl4Y3DWM9jigQeCIxDvWRiNmAxKXqvwidviL6ZBZMizXxEr4A j3/2JdcUQpRc7Bg0MND1/EOYXh0uiubC2flqdVTBXx3TpcXbLoWHvw/k pDLb02AgVZ96SpGHESuV2cRcoq7OJDl+4AGeyH6/vPR93cvVcqWAVjhC bdDkWtiqQ75FfeVrptoE44W3JfoDpIHrMIHooAMCARKigeAEgd20UFMe N4W8gEEDeu3ypqDx3LKMSc+bTWKwy4Jllua5jy7siv3QFsOx8leBLtup 88KmaGdyZX8b3wqLekMlmlYdsH7T6DqTZNYJ/f5Gfb5dOrF9EXeQIwjJ 4DcQmMpiIBU5b/FAaIzRIwLVII90nc+S8hl+01BXV3J8eKJlz0O9V7BF TbdzcVZOUpnt8SLyPdbvuDj2hhuwg3pc3sSrogL3TOpgJTdiWvCxadju UI553wcMgmwT9HiJMAPEubcziQetDl4wItBJBjLVlv50vxsXK+KIIhdv 9MeSINmpEQ== 0
+
+Outgoing update query:
+;; ->>HEADER<<- opcode: UPDATE, status: NOERROR, id:  27711
+;; flags:; ZONE: 1, PREREQ: 0, UPDATE: 1, ADDITIONAL: 1
+;; UPDATE SECTION:
+master.redacted_domain.com. 0	ANY	SSHFP	
+
+;; TSIG PSEUDOSECTION:
+1140507010.sig-master.redacted_domain.com. 0 ANY TSIG gss-tsig. 1671321646 300 28 BAQE//////8AAAAAByxqscRsHNlzRE2DuzK7aQ== 27711 NOERROR 0 
+
+Outgoing update query:
+;; ->>HEADER<<- opcode: UPDATE, status: NOERROR, id:      0
+;; flags:; ZONE: 0, PREREQ: 0, UPDATE: 0, ADDITIONAL: 0
+;; UPDATE SECTION:
+master.redacted_domain.com. 1200	IN	SSHFP	3 1 DDE5526FF285A7A1C9DF6E9560595C63E87FB72B
+master.redacted_domain.com. 1200	IN	SSHFP	3 2 CA834FA7866A7AA91D3D9103671F5816ABFFC3ACD1C1E1F9CD83460A AF2CF6F6
+master.redacted_domain.com. 1200	IN	SSHFP	4 1 E062558C08ADEBA564E258E9E446D392F89953F3
+master.redacted_domain.com. 1200	IN	SSHFP	4 2 56C027F5C45AA0490AA740863D55F79D479C272442644FC137288850 FB061C8E
+master.redacted_domain.com. 1200	IN	SSHFP	1 1 674E48EE0884ADCEA33917AAEE1C07DE90EB35E8
+master.redacted_domain.com. 1200	IN	SSHFP	1 2 B11128AEBECFE3BE339618D5AFE0CC602EE4E5C5FCC8A564FB1A5910 4A02737E
+
+Outgoing update query:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id:   8575
+;; flags:; QUESTION: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+;; QUESTION SECTION:
+;2063613574.sig-master.redacted_domain.com. ANY TKEY
+
+;; ADDITIONAL SECTION:
+2063613574.sig-master.redacted_domain.com. 0 ANY TKEY gss-tsig. 1671321646 1671321646 3 NOERROR 1939 YIIHjwYGKwYBBQUCoIIHgzCCB3+gDTALBgkqhkiG9xIBAgKiggdsBIIH aGCCB2QGCSqGSIb3EgECAgEAboIHUzCCB0+gAwIBBaEDAgEOogcDBQAg AAAAo4IGSmGCBkYwggZCoAMCAQWhERsPTU9OSVZBR1JPVVAuQ09Noiow KKADAgEBoSEwHxsDRE5TGxhtaWRtMDAxcC5tb25pdmFncm91cC5jb22j ggX6MIIF9qADAgESoQMCAQKiggXoBIIF5HI3H4mZ12Hyn1/iP/JRm+qQ ZWDzXemSfeKiE/J3GFupZoek7jRkqNqaALvObFvpmeqY68+8laGTF44W 0CTjHNMwhRIHxnSglV5pYWFtWbDHPWwoICeI3+1cB+OjuCfQXT06J8HJ 0bETMNaQYrtPlAiDqeFsayXW0vHFE6eYH10mSXQz4jKagSGQRtE7OTkX K99UvNRSiwHZ6UTwovgZO7+yqeLKXYEnR/iqIkfbEc+pQQN+8up7sim9 YiC0r5WJfQ0sWz0aLEROlKLJjQFrHV7jdsFVRrWtPjIf4QfcpXTZm5HS FL4p59/2WFwyhziq3o+NHO4dZqpVl79zNJGLPctfiuIpKPbCGtaQTiwo A2S2bKC8jYIC2fUE9F1F58Zd1+CqcUyWsB0N6xlXxO6hsYXVf7VzNXDR 3VnMMn9KRdXoL4N6IHdQ+cv8P45OOlid4plK5egqXI1o87TN5K1DgX4x XFOc8w53FKc80kfWwR1jSTI3S1z5S1YmhM/92zRaw1jsD2ImPea8Mk0t Yti6Jl6ZDl8E1fcme//3GubGNdP2twAQTEyJL+AzlGHCcoTHZn271gZ/ 78WXPBWIxO8of5iDmrXryu7LlQ3RLgYYrNgywtzKbpaKWa4gG/ZBH8J/ RdQEG5vlEleT2SN+fopDvlwthO8pvVSt8y3yHEk/OBUV1VfYfPYC+Qpu rbsjXmuFXDUG6lPqFYhSFjGRMeOnSO7krHX5PwKJtdU2oDWAwTlMHUfd NaWeIB6j9F4M2XaYJVfWOIbEGekCuEEZl54hGYkNXTfOYR7GRSEOxL2f kpQzU0VQCxXKPU+LR47EDaPODqmGtndx6e5QVlYMh9MUiIzsSXoTLVHe Oltrg02NlStw+6JNWhtf1BpYcCBRc/728HxBTlJHXSlZ04zZFwrRKZ3u gprKKQVWnpPXjta8pNfGb8xlcVMx+qfTOcoe74JlVB+xJdnRcXhypOyx TtmRulBZzuGAJUrX+VuyMNsIYuP6fHg/EgmQ/Q7D/xkKlm/4y8GX4jTg s7Dm9X1u9GnwHCEPqZObcWj5CMOsumRQ1tQUnUfcwBH8jQ8q6jsQAoI9 g64URG7sL+YVzYP7IaQK1p0xjx/jtbu3n17SYqDOvaPCNF5uk/LmkRCt LheDF6mcD4OJwC2du/m0Hyjy/BgzFKTmsIQVbZa5z5vuBBdhJ0hQWkNk Ad9Lcb/5okitdfLdm600oThyBGjZ8WCYBcViOOoGyFEu+lHA4Q26UYpK 8qepy6wpECY4il+VsdPE43x0yM+8UCQr/znyKsCiNyaSx04tfK8EOhQ0 /KpbkcIVBacjt9qvjQPW/LUYkctmguqKdsxVyiJHuhnz7qAWlC3dOM9t aTU/2TGgJcra9dIv/9ZYZsYH5nziHeBnO5U5cHIjfrFTZy4M4henMsxd SgWho51FCQ64TYv77TpSC95kBDSvIC/UDs8etjYQoq//nNTPzR24RT48 KEDvGo9GW0fuBg0UXksmAcVBQo2EXlJzN6MmU/t1BSYonZIbzLHLK4Vo mt4B+o0zKMpYnPpj06pnCXM9UsmBM8Dak3eKJrMp1TNi+dFd/hnoot2W ZOR/6rXwknYokUdzfbqMwIyskDssCMOcgrCoelIzsruhaplTR27drEal IsppO9PIR+4/wCHxw7Z1PlulP+f10bzejMFsj4ODvXHmsezU3YVsOqvG 1AefcJyF+G0jYga2AhJm74JTYHThx2hNYgZ63BZx5EzQL2+JaQ17h8Rk gIUU+HzTzS4tXO/b0fC2bh8BCskvA5xrYDqE5xOjKaVUCXgMX5ud1qx9 vBp16mOnl4Y3DWM9jigQeCIxDvWRiNmAxKXqvwidviL6ZBZMizXxEr4A j3/2JdcUQpRc7Bg0MND1/EOYXh0uiubC2flqdVTBXx3TpcXbLoWHvw/k pDLb02AgVZ96SpGHESuV2cRcoq7OJDl+4AGeyH6/vPR93cvVcqWAVjhC bdDkWtiqQ75FfeVrptoE44W3JfoDpIHrMIHooAMCARKigeAEgd1O90Pm Y2J0NTDFUQiNrf17j+s2L9m+j8UZtWFOYKeGAITxV6ji6GWj9LnsaDGD 1lvWxMCJNYeDz085ES9OiHYdCLSpRT2GinTYhIW5eqlqsz1lQlyViobK 7Tl551xyyGAxmb8yEHPXP/5+dJPIXhHnoNSzlSthNl+KhNhWpiXyZhbT RKd9nsljODOYGg7F9DXo4kPlL8vjYEL9e5IcyQGOdGLV3izmPnM81b2x gSaPDqyeOZQ4Bof9N37ekuKvegNvD+9dr/dZUSPIZmrmdK5HjPo4yrES wLVxRFRXwQ== 0
+
+Outgoing update query:
+;; ->>HEADER<<- opcode: UPDATE, status: NOERROR, id:  37386
+;; flags:; ZONE: 1, PREREQ: 0, UPDATE: 6, ADDITIONAL: 1
+;; UPDATE SECTION:
+master.redacted_domain.com. 1200	IN	SSHFP	3 1 DDE5526FF285A7A1C9DF6E9560595C63E87FB72B
+master.redacted_domain.com. 1200	IN	SSHFP	3 2 CA834FA7866A7AA91D3D9103671F5816ABFFC3ACD1C1E1F9CD83460A AF2CF6F6
+master.redacted_domain.com. 1200	IN	SSHFP	4 1 E062558C08ADEBA564E258E9E446D392F89953F3
+master.redacted_domain.com. 1200	IN	SSHFP	4 2 56C027F5C45AA0490AA740863D55F79D479C272442644FC137288850 FB061C8E
+master.redacted_domain.com. 1200	IN	SSHFP	1 1 674E48EE0884ADCEA33917AAEE1C07DE90EB35E8
+master.redacted_domain.com. 1200	IN	SSHFP	1 2 B11128AEBECFE3BE339618D5AFE0CC602EE4E5C5FCC8A564FB1A5910 4A02737E
+
+;; TSIG PSEUDOSECTION:
+2063613574.sig-master.redacted_domain.com. 0 ANY TSIG gss-tsig. 1671321647 300 28 BAQE//////8AAAAAI/hvK1cf4yZzxCEqEJ8EVA== 37386 NOERROR 0 
+
+
+2022-12-18T00:00:47Z DEBUG stderr=Reply from SOA query:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id:  29083
+;; flags: qr rd ra; QUESTION: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 0
+;; QUESTION SECTION:
+;master.redacted_domain.com.	IN	SOA
+
+;; AUTHORITY SECTION:
+redacted_domain.com.	3600	IN	SOA	master.redacted_domain.com. hostmaster.redacted_domain.com. 1671321612 3600 900 1209600 3600
+
+Found zone name: redacted_domain.com
+The primary is: master.redacted_domain.com
+start_gssrequest
+Found realm from ticket: REDACTED_DOMAIN.COM
+send_gssrequest
+recvmsg reply from GSS-TSIG query
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id:  19711
+;; flags: qr ra; QUESTION: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+;; QUESTION SECTION:
+;1140507010.sig-master.redacted_domain.com. ANY TKEY
+
+;; ANSWER SECTION:
+1140507010.sig-master.redacted_domain.com. 0 ANY TKEY gss-tsig. 1671321646 1671325246 3 NOERROR 186 oYG3MIG0oAMKAQChCwYJKoZIhvcSAQICooGfBIGcYIGZBgkqhkiG9xIB AgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRvE4/TDKmiaKYz mf201WTDJfgxwr/aEySwoWwliTWhXS7yMGjAylv+EcocKLDfO9Jzf1Cj idIVsTwM/gx4qWZBjmN6EmSnus/Z0UuwPog8e/aGfzIQewKgKl2XnqDV YbyD+/jL5IlbPq+Augz5575U 0
+
+;; TSIG PSEUDOSECTION:
+1140507010.sig-master.redacted_domain.com. 0 ANY TSIG gss-tsig. 1671321646 300 28 BAQF//////8AAAAAFo0eS8AjES7O9RtF50scvw== 19711 NOERROR 0 
+
+Sending update to 172.16.0.21#53
+
+Reply from update query:
+;; ->>HEADER<<- opcode: UPDATE, status: NOERROR, id:  27711
+;; flags: qr; ZONE: 1, PREREQ: 0, UPDATE: 0, ADDITIONAL: 1
+;; ZONE SECTION:
+;redacted_domain.com.		IN	SOA
+
+;; TSIG PSEUDOSECTION:
+1140507010.sig-master.redacted_domain.com. 0 ANY TSIG gss-tsig. 1671321646 300 28 BAQF//////8AAAAAFo0eTJ5vfGFdbgEUv+jqNg== 27711 NOERROR 0 
+
+Reply from SOA query:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id:  40373
+;; flags: qr rd ra; QUESTION: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 0
+;; QUESTION SECTION:
+;master.redacted_domain.com.	IN	SOA
+
+;; AUTHORITY SECTION:
+redacted_domain.com.	3600	IN	SOA	master.redacted_domain.com. hostmaster.redacted_domain.com. 1671321612 3600 900 1209600 3600
+
+Found zone name: redacted_domain.com
+The primary is: master.redacted_domain.com
+start_gssrequest
+send_gssrequest
+recvmsg reply from GSS-TSIG query
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id:   8575
+;; flags: qr ra; QUESTION: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+;; QUESTION SECTION:
+;2063613574.sig-master.redacted_domain.com. ANY TKEY
+
+;; ANSWER SECTION:
+2063613574.sig-master.redacted_domain.com. 0 ANY TKEY gss-tsig. 1671321646 1671325246 3 NOERROR 186 oYG3MIG0oAMKAQChCwYJKoZIhvcSAQICooGfBIGcYIGZBgkqhkiG9xIB AgICAG+BiTCBhqADAgEFoQMCAQ+iejB4oAMCARKicQRv7GZd5XiDH7KL 57rp+QCHqonKgd20eTOW4GXctlk58KK3RdvWzaIKI/F25qy4lbCW0eLL xHQVbSiez8YLRVXUg+iNWqFFdfOxxl8grX8WdWHVCCMlx5YNjJL+S12y D8CIcWOLttiOSbNoBQPkdyd7 0
+
+;; TSIG PSEUDOSECTION:
+2063613574.sig-master.redacted_domain.com. 0 ANY TSIG gss-tsig. 1671321646 300 28 BAQF//////8AAAAACTozQFqjt0q8hkQaXM5Osg== 8575 NOERROR 0 
+
+Sending update to 172.16.0.21#53
+
+Reply from update query:
+;; ->>HEADER<<- opcode: UPDATE, status: NOERROR, id:  37386
+;; flags: qr; ZONE: 1, PREREQ: 0, UPDATE: 0, ADDITIONAL: 1
+;; ZONE SECTION:
+;redacted_domain.com.		IN	SOA
+
+;; TSIG PSEUDOSECTION:
+2063613574.sig-master.redacted_domain.com. 0 ANY TSIG gss-tsig. 1671321647 300 28 BAQF//////8AAAAACTozQXAmH0JKFqqpJB4jpw== 37386 NOERROR 0 
+
+
+2022-12-18T00:00:47Z DEBUG Starting external process
+2022-12-18T00:00:47Z DEBUG args=['/bin/systemctl', 'list-unit-files', '--full']
+2022-12-18T00:00:48Z DEBUG Process finished, return code=0
+2022-12-18T00:00:48Z DEBUG stdout=UNIT FILE                                                                           STATE           PRESET
+proc-sys-fs-binfmt_misc.automount                                                   static          -
+-.mount                                                                             generated       -
+backup.mount                                                                        generated       -
+boot-efi.mount                                                                      generated       -
+boot.mount                                                                          generated       -
+dev-hugepages.mount                                                                 static          -
+dev-mqueue.mount                                                                    static          -
+home.mount                                                                          generated       -
+opt.mount                                                                           generated       -
+proc-fs-nfsd.mount                                                                  static          -
+proc-sys-fs-binfmt_misc.mount                                                       disabled        disabled
+srv.mount                                                                           generated       -
+sys-fs-fuse-connections.mount                                                       static          -
+sys-kernel-config.mount                                                             static          -
+sys-kernel-debug.mount                                                              static          -
+sys-kernel-tracing.mount                                                            static          -
+tmp.mount                                                                           generated       -
+usr.mount                                                                           generated       -
+var-crash.mount                                                                     generated       -
+var-lib-nfs-rpc_pipefs.mount                                                        static          -
+var-log-audit.mount                                                                 generated       -
+var-log.mount                                                                       generated       -
+var-tmp.mount                                                                       generated       -
+var.mount                                                                           generated       -
+clevis-luks-askpass.path                                                            enabled         enabled
+systemd-ask-password-console.path                                                   static          -
+systemd-ask-password-plymouth.path                                                  static          -
+systemd-ask-password-wall.path                                                      static          -
+session-1.scope                                                                     transient       -
+auditd.service                                                                      enabled         enabled
+auth-rpcgss-module.service                                                          static          -
+autofs.service                                                                      disabled        disabled
+autovt@.service                                                                     alias           -
+blk-availability.service                                                            disabled        disabled
+bluetooth.service                                                                   enabled         enabled
+certmonger.service                                                                  enabled         disabled
+chrony-wait.service                                                                 disabled        disabled
+chronyd.service                                                                     enabled         enabled
+clevis-luks-askpass.service                                                         static          -
+cockpit-motd.service                                                                static          -
+cockpit-wsinstance-http.service                                                     static          -
+cockpit-wsinstance-https-factory@.service                                           static          -
+cockpit-wsinstance-https@.service                                                   static          -
+cockpit.service                                                                     static          -
+console-getty.service                                                               disabled        disabled
+container-getty@.service                                                            static          -
+cpupower.service                                                                    disabled        disabled
+dbus-broker.service                                                                 enabled         enabled
+dbus-org.bluez.service                                                              alias           -
+dbus-org.fedoraproject.FirewallD1.service                                           alias           -
+dbus-org.freedesktop.hostname1.service                                              alias           -
+dbus-org.freedesktop.locale1.service                                                alias           -
+dbus-org.freedesktop.login1.service                                                 alias           -
+dbus-org.freedesktop.nm-dispatcher.service                                          alias           -
+dbus-org.freedesktop.oom1.service                                                   alias           -
+dbus-org.freedesktop.portable1.service                                              alias           -
+dbus-org.freedesktop.resolve1.service                                               alias           -
+dbus-org.freedesktop.timedate1.service                                              alias           -
+dbus.service                                                                        alias           -
+debug-shell.service                                                                 disabled        disabled
+dirsrv@.service                                                                     indirect        disabled
+dm-event.service                                                                    static          -
+dnf-automatic-download.service                                                      static          -
+dnf-automatic-install.service                                                       static          -
+dnf-automatic-notifyonly.service                                                    static          -
+dnf-automatic.service                                                               static          -
+dnf-makecache.service                                                               static          -
+dracut-cmdline.service                                                              static          -
+dracut-initqueue.service                                                            static          -
+dracut-mount.service                                                                static          -
+dracut-pre-mount.service                                                            static          -
+dracut-pre-pivot.service                                                            static          -
+dracut-pre-trigger.service                                                          static          -
+dracut-pre-udev.service                                                             static          -
+dracut-shutdown-onfailure.service                                                   static          -
+dracut-shutdown.service                                                             static          -
+emergency.service                                                                   static          -
+firewalld.service                                                                   enabled         enabled
+fstrim.service                                                                      static          -
+fwupd-offline-update.service                                                        static          -
+fwupd-refresh.service                                                               static          -
+fwupd.service                                                                       static          -
+getty@.service                                                                      enabled         enabled
+grub-boot-indeterminate.service                                                     static          -
+grub2-systemd-integration.service                                                   static          -
+gssproxy.service                                                                    disabled        disabled
+htcacheclean.service                                                                static          -
+httpd-init.service                                                                  static          -
+httpd.service                                                                       disabled        disabled
+httpd@.service                                                                      disabled        disabled
+initrd-cleanup.service                                                              static          -
+initrd-parse-etc.service                                                            static          -
+initrd-switch-root.service                                                          static          -
+initrd-udevadm-cleanup-db.service                                                   static          -
+ipa-ccache-sweep.service                                                            static          -
+ipa-custodia.service                                                                disabled        disabled
+ipa-dnskeysyncd.service                                                             disabled        disabled
+ipa-ods-exporter.service                                                            disabled        disabled
+ipa-otpd@.service                                                                   static          -
+ipa.service                                                                         disabled        disabled
+iscsi-init.service                                                                  static          -
+iscsi-onboot.service                                                                enabled         enabled
+iscsi-shutdown.service                                                              static          -
+iscsi.service                                                                       enabled         enabled
+iscsid.service                                                                      disabled        disabled
+iscsiuio.service                                                                    disabled        disabled
+kadmin.service                                                                      disabled        disabled
+kmod-static-nodes.service                                                           static          -
+kprop.service                                                                       disabled        disabled
+krb5kdc.service                                                                     disabled        disabled
+ldconfig.service                                                                    static          -
+logrotate.service                                                                   static          -
+lvm2-lvmpolld.service                                                               static          -
+lvm2-monitor.service                                                                enabled         enabled
+lvm2-pvscan@.service                                                                static          -
+man-db-cache-update.service                                                         static          -
+man-db-restart-cache-update.service                                                 disabled        disabled
+mdadm-grow-continue@.service                                                        static          -
+mdadm-last-resort@.service                                                          static          -
+mdcheck_continue.service                                                            static          -
+mdcheck_start.service                                                               static          -
+mdmon@.service                                                                      static          -
+mdmonitor-oneshot.service                                                           static          -
+mdmonitor.service                                                                   enabled         enabled
+modprobe@.service                                                                   static          -
+multipathd.service                                                                  enabled         enabled
+named-pkcs11.service                                                                masked          disabled
+named-setup-rndc.service                                                            static          -
+named.service                                                                       disabled        disabled
+NetworkManager-dispatcher.service                                                   enabled         enabled
+NetworkManager-wait-online.service                                                  enabled         enabled
+NetworkManager.service                                                              enabled         enabled
+nfs-blkmap.service                                                                  disabled        disabled
+nfs-idmapd.service                                                                  static          -
+nfs-mountd.service                                                                  static          -
+nfs-server.service                                                                  disabled        disabled
+nfs-utils.service                                                                   static          -
+nfsdcld.service                                                                     static          -
+nftables.service                                                                    disabled        disabled
+nis-domainname.service                                                              disabled        disabled
+nm-priv-helper.service                                                              static          -
+oddjobd.service                                                                     enabled         disabled
+ods-enforcerd.service                                                               disabled        disabled
+ods-signerd.service                                                                 disabled        disabled
+packagekit-offline-update.service                                                   static          -
+packagekit.service                                                                  static          -
+pam_namespace.service                                                               static          -
+pcscd.service                                                                       indirect        disabled
+pkcsslotd.service                                                                   disabled        disabled
+pki-tomcatd-nuxwdog@.service                                                        disabled        disabled
+pki-tomcatd@.service                                                                indirect        disabled
+plymouth-halt.service                                                               static          -
+plymouth-kexec.service                                                              static          -
+plymouth-poweroff.service                                                           static          -
+plymouth-quit-wait.service                                                          static          -
+plymouth-quit.service                                                               static          -
+plymouth-read-write.service                                                         static          -
+plymouth-reboot.service                                                             static          -
+plymouth-start.service                                                              static          -
+plymouth-switch-root-initramfs.service                                              static          -
+plymouth-switch-root.service                                                        static          -
+polkit.service                                                                      static          -
+qemu-guest-agent.service                                                            enabled         enabled
+quotaon.service                                                                     static          -
+raid-check.service                                                                  static          -
+rc-local.service                                                                    static          -
+rescue.service                                                                      static          -
+rpc-gssd.service                                                                    static          -
+rpc-statd-notify.service                                                            static          -
+rpc-statd.service                                                                   static          -
+rpcbind.service                                                                     disabled        disabled
+rpmdb-migrate.service                                                               enabled         enabled
+rpmdb-rebuild.service                                                               enabled         enabled
+selinux-autorelabel-mark.service                                                    enabled         enabled
+selinux-autorelabel.service                                                         static          -
+selinux-check-proper-disable.service                                                disabled        disabled
+serial-getty@.service                                                               indirect        disabled
+sshd-keygen@.service                                                                disabled        disabled
+sshd.service                                                                        enabled         enabled
+sshd@.service                                                                       static          -
+sssd-autofs.service                                                                 indirect        disabled
+sssd-ifp.service                                                                    static          -
+sssd-kcm.service                                                                    indirect        disabled
+sssd-nss.service                                                                    indirect        disabled
+sssd-pac.service                                                                    indirect        disabled
+sssd-pam.service                                                                    indirect        disabled
+sssd-ssh.service                                                                    indirect        disabled
+sssd-sudo.service                                                                   indirect        disabled
+sssd.service                                                                        enabled         enabled
+system-update-cleanup.service                                                       static          -
+systemd-ask-password-console.service                                                static          -
+systemd-ask-password-plymouth.service                                               static          -
+systemd-ask-password-wall.service                                                   static          -
+systemd-backlight@.service                                                          static          -
+systemd-binfmt.service                                                              static          -
+systemd-bless-boot.service                                                          static          -
+systemd-boot-check-no-failures.service                                              disabled        disabled
+systemd-boot-system-token.service                                                   static          -
+systemd-boot-update.service                                                         enabled         enabled
+systemd-coredump@.service                                                           static          -
+systemd-cryptsetup@luks\x2da4f770cc\x2d91a8\x2d48cf\x2dacd1\x2da6e9ef6669fa.service generated       -
+systemd-exit.service                                                                static          -
+systemd-firstboot.service                                                           static          -
+systemd-fsck-root.service                                                           static          -
+systemd-fsck@.service                                                               static          -
+systemd-halt.service                                                                static          -
+systemd-hibernate-resume@.service                                                   static          -
+systemd-hibernate.service                                                           static          -
+systemd-homed-activate.service                                                      disabled        disabled
+systemd-homed.service                                                               disabled        enabled
+systemd-hostnamed.service                                                           static          -
+systemd-hwdb-update.service                                                         static          -
+systemd-hybrid-sleep.service                                                        static          -
+systemd-initctl.service                                                             static          -
+systemd-journal-catalog-update.service                                              static          -
+systemd-journal-flush.service                                                       static          -
+systemd-journald.service                                                            static          -
+systemd-journald@.service                                                           static          -
+systemd-kexec.service                                                               static          -
+systemd-localed.service                                                             static          -
+systemd-logind.service                                                              static          -
+systemd-machine-id-commit.service                                                   static          -
+systemd-modules-load.service                                                        static          -
+systemd-network-generator.service                                                   enabled         enabled
+systemd-oomd.service                                                                enabled         enabled
+systemd-portabled.service                                                           static          -
+systemd-poweroff.service                                                            static          -
+systemd-pstore.service                                                              disabled        enabled
+systemd-quotacheck.service                                                          static          -
+systemd-random-seed.service                                                         static          -
+systemd-reboot.service                                                              static          -
+systemd-remount-fs.service                                                          enabled-runtime disabled
+systemd-repart.service                                                              static          -
+systemd-resolved.service                                                            enabled         enabled
+systemd-rfkill.service                                                              static          -
+systemd-suspend-then-hibernate.service                                              static          -
+systemd-suspend.service                                                             static          -
+systemd-sysctl.service                                                              static          -
+systemd-sysext.service                                                              disabled        disabled
+systemd-sysupdate-reboot.service                                                    indirect        disabled
+systemd-sysupdate.service                                                           indirect        disabled
+systemd-sysusers.service                                                            static          -
+systemd-time-wait-sync.service                                                      disabled        disabled
+systemd-timedated.service                                                           static          -
+systemd-timesyncd.service                                                           disabled        disabled
+systemd-tmpfiles-clean.service                                                      static          -
+systemd-tmpfiles-setup-dev.service                                                  static          -
+systemd-tmpfiles-setup.service                                                      static          -
+systemd-udev-settle.service                                                         static          -
+systemd-udev-trigger.service                                                        static          -
+systemd-udevd.service                                                               static          -
+systemd-update-done.service                                                         static          -
+systemd-update-utmp-runlevel.service                                                static          -
+systemd-update-utmp.service                                                         static          -
+systemd-user-sessions.service                                                       static          -
+systemd-userdbd.service                                                             indirect        disabled
+systemd-vconsole-setup.service                                                      static          -
+systemd-volatile-root.service                                                       static          -
+systemd-zram-setup@.service                                                         static          -
+teamd@.service                                                                      static          -
+tomcat.service                                                                      disabled        disabled
+tomcat@.service                                                                     disabled        disabled
+tuned.service                                                                       disabled        disabled
+udisks2.service                                                                     enabled         enabled
+user-runtime-dir@.service                                                           static          -
+user@.service                                                                       static          -
+vgauthd.service                                                                     enabled         disabled
+vmtoolsd.service                                                                    enabled         enabled
+xe-linux-distribution.service                                                       enabled         disabled
+system-cockpithttps.slice                                                           static          -
+system-systemd\x2dcryptsetup.slice                                                  static          -
+user.slice                                                                          static          -
+cockpit-wsinstance-http.socket                                                      static          -
+cockpit-wsinstance-https-factory.socket                                             static          -
+cockpit-wsinstance-https@.socket                                                    static          -
+cockpit.socket                                                                      disabled        disabled
+dbus.socket                                                                         enabled         enabled
+dm-event.socket                                                                     enabled         enabled
+httpd.socket                                                                        disabled        disabled
+ipa-ods-exporter.socket                                                             disabled        disabled
+ipa-otpd.socket                                                                     disabled        disabled
+iscsid.socket                                                                       enabled         enabled
+iscsiuio.socket                                                                     enabled         enabled
+lvm2-lvmpolld.socket                                                                enabled         enabled
+multipathd.socket                                                                   enabled         disabled
+pcscd.socket                                                                        enabled         enabled
+rpcbind.socket                                                                      disabled        disabled
+sshd.socket                                                                         disabled        disabled
+sssd-autofs.socket                                                                  disabled        disabled
+sssd-kcm.socket                                                                     enabled         enabled
+sssd-nss.socket                                                                     disabled        disabled
+sssd-pac.socket                                                                     disabled        disabled
+sssd-pam-priv.socket                                                                disabled        disabled
+sssd-pam.socket                                                                     disabled        disabled
+sssd-ssh.socket                                                                     disabled        disabled
+sssd-sudo.socket                                                                    disabled        disabled
+syslog.socket                                                                       static          -
+systemd-coredump.socket                                                             static          -
+systemd-initctl.socket                                                              static          -
+systemd-journald-audit.socket                                                       static          -
+systemd-journald-dev-log.socket                                                     static          -
+systemd-journald-varlink@.socket                                                    static          -
+systemd-journald.socket                                                             static          -
+systemd-journald@.socket                                                            static          -
+systemd-oomd.socket                                                                 disabled        disabled
+systemd-rfkill.socket                                                               static          -
+systemd-udevd-control.socket                                                        static          -
+systemd-udevd-kernel.socket                                                         static          -
+systemd-userdbd.socket                                                              enabled         enabled
+dev-zram0.swap                                                                      generated       -
+basic.target                                                                        static          -
+blockdev@.target                                                                    static          -
+bluetooth.target                                                                    static          -
+boot-complete.target                                                                static          -
+cryptsetup-pre.target                                                               static          -
+cryptsetup.target                                                                   static          -
+ctrl-alt-del.target                                                                 alias           -
+default.target                                                                      alias           -
+dirsrv.target                                                                       disabled        disabled
+emergency.target                                                                    static          -
+exit.target                                                                         disabled        disabled
+factory-reset.target                                                                static          -
+final.target                                                                        static          -
+first-boot-complete.target                                                          static          -
+getty-pre.target                                                                    static          -
+getty.target                                                                        static          -
+graphical.target                                                                    static          -
+halt.target                                                                         disabled        disabled
+hibernate.target                                                                    static          -
+hybrid-sleep.target                                                                 static          -
+initrd-fs.target                                                                    static          -
+initrd-root-device.target                                                           static          -
+initrd-root-fs.target                                                               static          -
+initrd-switch-root.target                                                           static          -
+initrd-usr-fs.target                                                                static          -
+initrd.target                                                                       static          -
+integritysetup-pre.target                                                           static          -
+integritysetup.target                                                               static          -
+kexec.target                                                                        disabled        disabled
+local-fs-pre.target                                                                 static          -
+local-fs.target                                                                     static          -
+multi-user.target                                                                   indirect        disabled
+network-online.target                                                               static          -
+network-pre.target                                                                  static          -
+network.target                                                                      static          -
+nfs-client.target                                                                   enabled         disabled
+nss-lookup.target                                                                   static          -
+nss-user-lookup.target                                                              static          -
+paths.target                                                                        static          -
+pki-tomcatd-nuxwdog.target                                                          disabled        disabled
+pki-tomcatd.target                                                                  disabled        disabled
+poweroff.target                                                                     disabled        disabled
+printer.target                                                                      static          -
+reboot.target                                                                       enabled         enabled
+remote-cryptsetup.target                                                            disabled        enabled
+remote-fs-pre.target                                                                static          -
+remote-fs.target                                                                    enabled         enabled
+remote-veritysetup.target                                                           disabled        disabled
+rescue.target                                                                       static          -
+rpc_pipefs.target                                                                   static          -
+rpcbind.target                                                                      static          -
+runlevel0.target                                                                    alias           -
+runlevel1.target                                                                    alias           -
+runlevel2.target                                                                    alias           -
+runlevel3.target                                                                    alias           -
+runlevel4.target                                                                    alias           -
+runlevel5.target                                                                    alias           -
+runlevel6.target                                                                    alias           -
+selinux-autorelabel.target                                                          static          -
+shutdown.target                                                                     static          -
+sigpwr.target                                                                       static          -
+sleep.target                                                                        static          -
+slices.target                                                                       static          -
+smartcard.target                                                                    static          -
+sockets.target                                                                      static          -
+sound.target                                                                        static          -
+sshd-keygen.target                                                                  static          -
+suspend-then-hibernate.target                                                       static          -
+suspend.target                                                                      static          -
+swap.target                                                                         static          -
+sysinit.target                                                                      static          -
+system-update-pre.target                                                            static          -
+system-update.target                                                                static          -
+time-set.target                                                                     static          -
+time-sync.target                                                                    static          -
+timers.target                                                                       static          -
+umount.target                                                                       static          -
+usb-gadget.target                                                                   static          -
+veritysetup-pre.target                                                              static          -
+veritysetup.target                                                                  static          -
+dnf-automatic-download.timer                                                        disabled        disabled
+dnf-automatic-install.timer                                                         disabled        disabled
+dnf-automatic-notifyonly.timer                                                      disabled        disabled
+dnf-automatic.timer                                                                 disabled        disabled
+dnf-makecache.timer                                                                 enabled         enabled
+fstrim.timer                                                                        enabled         enabled
+fwupd-refresh.timer                                                                 disabled        disabled
+ipa-ccache-sweep.timer                                                              enabled         disabled
+logrotate.timer                                                                     enabled         enabled
+mdadm-last-resort@.timer                                                            static          -
+mdcheck_continue.timer                                                              disabled        disabled
+mdcheck_start.timer                                                                 disabled        disabled
+mdmonitor-oneshot.timer                                                             disabled        disabled
+raid-check.timer                                                                    enabled         enabled
+systemd-sysupdate-reboot.timer                                                      disabled        disabled
+systemd-sysupdate.timer                                                             disabled        disabled
+systemd-tmpfiles-clean.timer                                                        static          -
+
+407 unit files listed.
+
+2022-12-18T00:00:48Z DEBUG stderr=
+2022-12-18T00:00:48Z DEBUG Starting external process
+2022-12-18T00:00:48Z DEBUG args=['/bin/systemctl', 'list-unit-files', '--full']
+2022-12-18T00:00:49Z DEBUG Process finished, return code=0
+2022-12-18T00:00:49Z DEBUG stdout=UNIT FILE                                                                           STATE           PRESET
+proc-sys-fs-binfmt_misc.automount                                                   static          -
+-.mount                                                                             generated       -
+backup.mount                                                                        generated       -
+boot-efi.mount                                                                      generated       -
+boot.mount                                                                          generated       -
+dev-hugepages.mount                                                                 static          -
+dev-mqueue.mount                                                                    static          -
+home.mount                                                                          generated       -
+opt.mount                                                                           generated       -
+proc-fs-nfsd.mount                                                                  static          -
+proc-sys-fs-binfmt_misc.mount                                                       disabled        disabled
+srv.mount                                                                           generated       -
+sys-fs-fuse-connections.mount                                                       static          -
+sys-kernel-config.mount                                                             static          -
+sys-kernel-debug.mount                                                              static          -
+sys-kernel-tracing.mount                                                            static          -
+tmp.mount                                                                           generated       -
+usr.mount                                                                           generated       -
+var-crash.mount                                                                     generated       -
+var-lib-nfs-rpc_pipefs.mount                                                        static          -
+var-log-audit.mount                                                                 generated       -
+var-log.mount                                                                       generated       -
+var-tmp.mount                                                                       generated       -
+var.mount                                                                           generated       -
+clevis-luks-askpass.path                                                            enabled         enabled
+systemd-ask-password-console.path                                                   static          -
+systemd-ask-password-plymouth.path                                                  static          -
+systemd-ask-password-wall.path                                                      static          -
+session-1.scope                                                                     transient       -
+auditd.service                                                                      enabled         enabled
+auth-rpcgss-module.service                                                          static          -
+autofs.service                                                                      disabled        disabled
+autovt@.service                                                                     alias           -
+blk-availability.service                                                            disabled        disabled
+bluetooth.service                                                                   enabled         enabled
+certmonger.service                                                                  enabled         disabled
+chrony-wait.service                                                                 disabled        disabled
+chronyd.service                                                                     enabled         enabled
+clevis-luks-askpass.service                                                         static          -
+cockpit-motd.service                                                                static          -
+cockpit-wsinstance-http.service                                                     static          -
+cockpit-wsinstance-https-factory@.service                                           static          -
+cockpit-wsinstance-https@.service                                                   static          -
+cockpit.service                                                                     static          -
+console-getty.service                                                               disabled        disabled
+container-getty@.service                                                            static          -
+cpupower.service                                                                    disabled        disabled
+dbus-broker.service                                                                 enabled         enabled
+dbus-org.bluez.service                                                              alias           -
+dbus-org.fedoraproject.FirewallD1.service                                           alias           -
+dbus-org.freedesktop.hostname1.service                                              alias           -
+dbus-org.freedesktop.locale1.service                                                alias           -
+dbus-org.freedesktop.login1.service                                                 alias           -
+dbus-org.freedesktop.nm-dispatcher.service                                          alias           -
+dbus-org.freedesktop.oom1.service                                                   alias           -
+dbus-org.freedesktop.portable1.service                                              alias           -
+dbus-org.freedesktop.resolve1.service                                               alias           -
+dbus-org.freedesktop.timedate1.service                                              alias           -
+dbus.service                                                                        alias           -
+debug-shell.service                                                                 disabled        disabled
+dirsrv@.service                                                                     indirect        disabled
+dm-event.service                                                                    static          -
+dnf-automatic-download.service                                                      static          -
+dnf-automatic-install.service                                                       static          -
+dnf-automatic-notifyonly.service                                                    static          -
+dnf-automatic.service                                                               static          -
+dnf-makecache.service                                                               static          -
+dracut-cmdline.service                                                              static          -
+dracut-initqueue.service                                                            static          -
+dracut-mount.service                                                                static          -
+dracut-pre-mount.service                                                            static          -
+dracut-pre-pivot.service                                                            static          -
+dracut-pre-trigger.service                                                          static          -
+dracut-pre-udev.service                                                             static          -
+dracut-shutdown-onfailure.service                                                   static          -
+dracut-shutdown.service                                                             static          -
+emergency.service                                                                   static          -
+firewalld.service                                                                   enabled         enabled
+fstrim.service                                                                      static          -
+fwupd-offline-update.service                                                        static          -
+fwupd-refresh.service                                                               static          -
+fwupd.service                                                                       static          -
+getty@.service                                                                      enabled         enabled
+grub-boot-indeterminate.service                                                     static          -
+grub2-systemd-integration.service                                                   static          -
+gssproxy.service                                                                    disabled        disabled
+htcacheclean.service                                                                static          -
+httpd-init.service                                                                  static          -
+httpd.service                                                                       disabled        disabled
+httpd@.service                                                                      disabled        disabled
+initrd-cleanup.service                                                              static          -
+initrd-parse-etc.service                                                            static          -
+initrd-switch-root.service                                                          static          -
+initrd-udevadm-cleanup-db.service                                                   static          -
+ipa-ccache-sweep.service                                                            static          -
+ipa-custodia.service                                                                disabled        disabled
+ipa-dnskeysyncd.service                                                             disabled        disabled
+ipa-ods-exporter.service                                                            disabled        disabled
+ipa-otpd@.service                                                                   static          -
+ipa.service                                                                         disabled        disabled
+iscsi-init.service                                                                  static          -
+iscsi-onboot.service                                                                enabled         enabled
+iscsi-shutdown.service                                                              static          -
+iscsi.service                                                                       enabled         enabled
+iscsid.service                                                                      disabled        disabled
+iscsiuio.service                                                                    disabled        disabled
+kadmin.service                                                                      disabled        disabled
+kmod-static-nodes.service                                                           static          -
+kprop.service                                                                       disabled        disabled
+krb5kdc.service                                                                     disabled        disabled
+ldconfig.service                                                                    static          -
+logrotate.service                                                                   static          -
+lvm2-lvmpolld.service                                                               static          -
+lvm2-monitor.service                                                                enabled         enabled
+lvm2-pvscan@.service                                                                static          -
+man-db-cache-update.service                                                         static          -
+man-db-restart-cache-update.service                                                 disabled        disabled
+mdadm-grow-continue@.service                                                        static          -
+mdadm-last-resort@.service                                                          static          -
+mdcheck_continue.service                                                            static          -
+mdcheck_start.service                                                               static          -
+mdmon@.service                                                                      static          -
+mdmonitor-oneshot.service                                                           static          -
+mdmonitor.service                                                                   enabled         enabled
+modprobe@.service                                                                   static          -
+multipathd.service                                                                  enabled         enabled
+named-pkcs11.service                                                                masked          disabled
+named-setup-rndc.service                                                            static          -
+named.service                                                                       disabled        disabled
+NetworkManager-dispatcher.service                                                   enabled         enabled
+NetworkManager-wait-online.service                                                  enabled         enabled
+NetworkManager.service                                                              enabled         enabled
+nfs-blkmap.service                                                                  disabled        disabled
+nfs-idmapd.service                                                                  static          -
+nfs-mountd.service                                                                  static          -
+nfs-server.service                                                                  disabled        disabled
+nfs-utils.service                                                                   static          -
+nfsdcld.service                                                                     static          -
+nftables.service                                                                    disabled        disabled
+nis-domainname.service                                                              disabled        disabled
+nm-priv-helper.service                                                              static          -
+oddjobd.service                                                                     enabled         disabled
+ods-enforcerd.service                                                               disabled        disabled
+ods-signerd.service                                                                 disabled        disabled
+packagekit-offline-update.service                                                   static          -
+packagekit.service                                                                  static          -
+pam_namespace.service                                                               static          -
+pcscd.service                                                                       indirect        disabled
+pkcsslotd.service                                                                   disabled        disabled
+pki-tomcatd-nuxwdog@.service                                                        disabled        disabled
+pki-tomcatd@.service                                                                indirect        disabled
+plymouth-halt.service                                                               static          -
+plymouth-kexec.service                                                              static          -
+plymouth-poweroff.service                                                           static          -
+plymouth-quit-wait.service                                                          static          -
+plymouth-quit.service                                                               static          -
+plymouth-read-write.service                                                         static          -
+plymouth-reboot.service                                                             static          -
+plymouth-start.service                                                              static          -
+plymouth-switch-root-initramfs.service                                              static          -
+plymouth-switch-root.service                                                        static          -
+polkit.service                                                                      static          -
+qemu-guest-agent.service                                                            enabled         enabled
+quotaon.service                                                                     static          -
+raid-check.service                                                                  static          -
+rc-local.service                                                                    static          -
+rescue.service                                                                      static          -
+rpc-gssd.service                                                                    static          -
+rpc-statd-notify.service                                                            static          -
+rpc-statd.service                                                                   static          -
+rpcbind.service                                                                     disabled        disabled
+rpmdb-migrate.service                                                               enabled         enabled
+rpmdb-rebuild.service                                                               enabled         enabled
+selinux-autorelabel-mark.service                                                    enabled         enabled
+selinux-autorelabel.service                                                         static          -
+selinux-check-proper-disable.service                                                disabled        disabled
+serial-getty@.service                                                               indirect        disabled
+sshd-keygen@.service                                                                disabled        disabled
+sshd.service                                                                        enabled         enabled
+sshd@.service                                                                       static          -
+sssd-autofs.service                                                                 indirect        disabled
+sssd-ifp.service                                                                    static          -
+sssd-kcm.service                                                                    indirect        disabled
+sssd-nss.service                                                                    indirect        disabled
+sssd-pac.service                                                                    indirect        disabled
+sssd-pam.service                                                                    indirect        disabled
+sssd-ssh.service                                                                    indirect        disabled
+sssd-sudo.service                                                                   indirect        disabled
+sssd.service                                                                        enabled         enabled
+system-update-cleanup.service                                                       static          -
+systemd-ask-password-console.service                                                static          -
+systemd-ask-password-plymouth.service                                               static          -
+systemd-ask-password-wall.service                                                   static          -
+systemd-backlight@.service                                                          static          -
+systemd-binfmt.service                                                              static          -
+systemd-bless-boot.service                                                          static          -
+systemd-boot-check-no-failures.service                                              disabled        disabled
+systemd-boot-system-token.service                                                   static          -
+systemd-boot-update.service                                                         enabled         enabled
+systemd-coredump@.service                                                           static          -
+systemd-cryptsetup@luks\x2da4f770cc\x2d91a8\x2d48cf\x2dacd1\x2da6e9ef6669fa.service generated       -
+systemd-exit.service                                                                static          -
+systemd-firstboot.service                                                           static          -
+systemd-fsck-root.service                                                           static          -
+systemd-fsck@.service                                                               static          -
+systemd-halt.service                                                                static          -
+systemd-hibernate-resume@.service                                                   static          -
+systemd-hibernate.service                                                           static          -
+systemd-homed-activate.service                                                      disabled        disabled
+systemd-homed.service                                                               disabled        enabled
+systemd-hostnamed.service                                                           static          -
+systemd-hwdb-update.service                                                         static          -
+systemd-hybrid-sleep.service                                                        static          -
+systemd-initctl.service                                                             static          -
+systemd-journal-catalog-update.service                                              static          -
+systemd-journal-flush.service                                                       static          -
+systemd-journald.service                                                            static          -
+systemd-journald@.service                                                           static          -
+systemd-kexec.service                                                               static          -
+systemd-localed.service                                                             static          -
+systemd-logind.service                                                              static          -
+systemd-machine-id-commit.service                                                   static          -
+systemd-modules-load.service                                                        static          -
+systemd-network-generator.service                                                   enabled         enabled
+systemd-oomd.service                                                                enabled         enabled
+systemd-portabled.service                                                           static          -
+systemd-poweroff.service                                                            static          -
+systemd-pstore.service                                                              disabled        enabled
+systemd-quotacheck.service                                                          static          -
+systemd-random-seed.service                                                         static          -
+systemd-reboot.service                                                              static          -
+systemd-remount-fs.service                                                          enabled-runtime disabled
+systemd-repart.service                                                              static          -
+systemd-resolved.service                                                            enabled         enabled
+systemd-rfkill.service                                                              static          -
+systemd-suspend-then-hibernate.service                                              static          -
+systemd-suspend.service                                                             static          -
+systemd-sysctl.service                                                              static          -
+systemd-sysext.service                                                              disabled        disabled
+systemd-sysupdate-reboot.service                                                    indirect        disabled
+systemd-sysupdate.service                                                           indirect        disabled
+systemd-sysusers.service                                                            static          -
+systemd-time-wait-sync.service                                                      disabled        disabled
+systemd-timedated.service                                                           static          -
+systemd-timesyncd.service                                                           disabled        disabled
+systemd-tmpfiles-clean.service                                                      static          -
+systemd-tmpfiles-setup-dev.service                                                  static          -
+systemd-tmpfiles-setup.service                                                      static          -
+systemd-udev-settle.service                                                         static          -
+systemd-udev-trigger.service                                                        static          -
+systemd-udevd.service                                                               static          -
+systemd-update-done.service                                                         static          -
+systemd-update-utmp-runlevel.service                                                static          -
+systemd-update-utmp.service                                                         static          -
+systemd-user-sessions.service                                                       static          -
+systemd-userdbd.service                                                             indirect        disabled
+systemd-vconsole-setup.service                                                      static          -
+systemd-volatile-root.service                                                       static          -
+systemd-zram-setup@.service                                                         static          -
+teamd@.service                                                                      static          -
+tomcat.service                                                                      disabled        disabled
+tomcat@.service                                                                     disabled        disabled
+tuned.service                                                                       disabled        disabled
+udisks2.service                                                                     enabled         enabled
+user-runtime-dir@.service                                                           static          -
+user@.service                                                                       static          -
+vgauthd.service                                                                     enabled         disabled
+vmtoolsd.service                                                                    enabled         enabled
+xe-linux-distribution.service                                                       enabled         disabled
+system-cockpithttps.slice                                                           static          -
+system-systemd\x2dcryptsetup.slice                                                  static          -
+user.slice                                                                          static          -
+cockpit-wsinstance-http.socket                                                      static          -
+cockpit-wsinstance-https-factory.socket                                             static          -
+cockpit-wsinstance-https@.socket                                                    static          -
+cockpit.socket                                                                      disabled        disabled
+dbus.socket                                                                         enabled         enabled
+dm-event.socket                                                                     enabled         enabled
+httpd.socket                                                                        disabled        disabled
+ipa-ods-exporter.socket                                                             disabled        disabled
+ipa-otpd.socket                                                                     disabled        disabled
+iscsid.socket                                                                       enabled         enabled
+iscsiuio.socket                                                                     enabled         enabled
+lvm2-lvmpolld.socket                                                                enabled         enabled
+multipathd.socket                                                                   enabled         disabled
+pcscd.socket                                                                        enabled         enabled
+rpcbind.socket                                                                      disabled        disabled
+sshd.socket                                                                         disabled        disabled
+sssd-autofs.socket                                                                  disabled        disabled
+sssd-kcm.socket                                                                     enabled         enabled
+sssd-nss.socket                                                                     disabled        disabled
+sssd-pac.socket                                                                     disabled        disabled
+sssd-pam-priv.socket                                                                disabled        disabled
+sssd-pam.socket                                                                     disabled        disabled
+sssd-ssh.socket                                                                     disabled        disabled
+sssd-sudo.socket                                                                    disabled        disabled
+syslog.socket                                                                       static          -
+systemd-coredump.socket                                                             static          -
+systemd-initctl.socket                                                              static          -
+systemd-journald-audit.socket                                                       static          -
+systemd-journald-dev-log.socket                                                     static          -
+systemd-journald-varlink@.socket                                                    static          -
+systemd-journald.socket                                                             static          -
+systemd-journald@.socket                                                            static          -
+systemd-oomd.socket                                                                 disabled        disabled
+systemd-rfkill.socket                                                               static          -
+systemd-udevd-control.socket                                                        static          -
+systemd-udevd-kernel.socket                                                         static          -
+systemd-userdbd.socket                                                              enabled         enabled
+dev-zram0.swap                                                                      generated       -
+basic.target                                                                        static          -
+blockdev@.target                                                                    static          -
+bluetooth.target                                                                    static          -
+boot-complete.target                                                                static          -
+cryptsetup-pre.target                                                               static          -
+cryptsetup.target                                                                   static          -
+ctrl-alt-del.target                                                                 alias           -
+default.target                                                                      alias           -
+dirsrv.target                                                                       disabled        disabled
+emergency.target                                                                    static          -
+exit.target                                                                         disabled        disabled
+factory-reset.target                                                                static          -
+final.target                                                                        static          -
+first-boot-complete.target                                                          static          -
+getty-pre.target                                                                    static          -
+getty.target                                                                        static          -
+graphical.target                                                                    static          -
+halt.target                                                                         disabled        disabled
+hibernate.target                                                                    static          -
+hybrid-sleep.target                                                                 static          -
+initrd-fs.target                                                                    static          -
+initrd-root-device.target                                                           static          -
+initrd-root-fs.target                                                               static          -
+initrd-switch-root.target                                                           static          -
+initrd-usr-fs.target                                                                static          -
+initrd.target                                                                       static          -
+integritysetup-pre.target                                                           static          -
+integritysetup.target                                                               static          -
+kexec.target                                                                        disabled        disabled
+local-fs-pre.target                                                                 static          -
+local-fs.target                                                                     static          -
+multi-user.target                                                                   indirect        disabled
+network-online.target                                                               static          -
+network-pre.target                                                                  static          -
+network.target                                                                      static          -
+nfs-client.target                                                                   enabled         disabled
+nss-lookup.target                                                                   static          -
+nss-user-lookup.target                                                              static          -
+paths.target                                                                        static          -
+pki-tomcatd-nuxwdog.target                                                          disabled        disabled
+pki-tomcatd.target                                                                  disabled        disabled
+poweroff.target                                                                     disabled        disabled
+printer.target                                                                      static          -
+reboot.target                                                                       enabled         enabled
+remote-cryptsetup.target                                                            disabled        enabled
+remote-fs-pre.target                                                                static          -
+remote-fs.target                                                                    enabled         enabled
+remote-veritysetup.target                                                           disabled        disabled
+rescue.target                                                                       static          -
+rpc_pipefs.target                                                                   static          -
+rpcbind.target                                                                      static          -
+runlevel0.target                                                                    alias           -
+runlevel1.target                                                                    alias           -
+runlevel2.target                                                                    alias           -
+runlevel3.target                                                                    alias           -
+runlevel4.target                                                                    alias           -
+runlevel5.target                                                                    alias           -
+runlevel6.target                                                                    alias           -
+selinux-autorelabel.target                                                          static          -
+shutdown.target                                                                     static          -
+sigpwr.target                                                                       static          -
+sleep.target                                                                        static          -
+slices.target                                                                       static          -
+smartcard.target                                                                    static          -
+sockets.target                                                                      static          -
+sound.target                                                                        static          -
+sshd-keygen.target                                                                  static          -
+suspend-then-hibernate.target                                                       static          -
+suspend.target                                                                      static          -
+swap.target                                                                         static          -
+sysinit.target                                                                      static          -
+system-update-pre.target                                                            static          -
+system-update.target                                                                static          -
+time-set.target                                                                     static          -
+time-sync.target                                                                    static          -
+timers.target                                                                       static          -
+umount.target                                                                       static          -
+usb-gadget.target                                                                   static          -
+veritysetup-pre.target                                                              static          -
+veritysetup.target                                                                  static          -
+dnf-automatic-download.timer                                                        disabled        disabled
+dnf-automatic-install.timer                                                         disabled        disabled
+dnf-automatic-notifyonly.timer                                                      disabled        disabled
+dnf-automatic.timer                                                                 disabled        disabled
+dnf-makecache.timer                                                                 enabled         enabled
+fstrim.timer                                                                        enabled         enabled
+fwupd-refresh.timer                                                                 disabled        disabled
+ipa-ccache-sweep.timer                                                              enabled         disabled
+logrotate.timer                                                                     enabled         enabled
+mdadm-last-resort@.timer                                                            static          -
+mdcheck_continue.timer                                                              disabled        disabled
+mdcheck_start.timer                                                                 disabled        disabled
+mdmonitor-oneshot.timer                                                             disabled        disabled
+raid-check.timer                                                                    enabled         enabled
+systemd-sysupdate-reboot.timer                                                      disabled        disabled
+systemd-sysupdate.timer                                                             disabled        disabled
+systemd-tmpfiles-clean.timer                                                        static          -
+
+407 unit files listed.
+
+2022-12-18T00:00:49Z DEBUG stderr=
+2022-12-18T00:00:49Z DEBUG Loading StateFile from '/var/lib/ipa-client/sysrestore/sysrestore.state'
+2022-12-18T00:00:49Z DEBUG Saving StateFile to '/var/lib/ipa-client/sysrestore/sysrestore.state'
+2022-12-18T00:00:49Z DEBUG Starting external process
+2022-12-18T00:00:49Z DEBUG args=['/usr/bin/authselect', 'select', 'sssd', 'with-sudo', '--force', '--backup=pre_ipaclient_20221218010049']
+2022-12-18T00:00:49Z DEBUG Process finished, return code=0
+2022-12-18T00:00:49Z DEBUG stdout=Backup stored at /var/lib/authselect/backups/pre_ipaclient_20221218010049
+Profile "sssd" was selected.
+
+Make sure that SSSD service is configured and enabled. See SSSD documentation for more information.
+
+
+2022-12-18T00:00:49Z DEBUG stderr=
+2022-12-18T00:00:49Z INFO SSSD enabled
+2022-12-18T00:00:49Z DEBUG Starting external process
+2022-12-18T00:00:49Z DEBUG args=['/bin/systemctl', 'restart', 'sssd.service']
+2022-12-18T00:00:49Z DEBUG Process finished, return code=0
+2022-12-18T00:00:49Z DEBUG stdout=
+2022-12-18T00:00:49Z DEBUG stderr=
+2022-12-18T00:00:49Z DEBUG Starting external process
+2022-12-18T00:00:49Z DEBUG args=['/bin/systemctl', 'is-active', 'sssd.service']
+2022-12-18T00:00:49Z DEBUG Process finished, return code=0
+2022-12-18T00:00:49Z DEBUG stdout=active
+
+2022-12-18T00:00:49Z DEBUG stderr=
+2022-12-18T00:00:49Z DEBUG Restart of sssd.service complete
+2022-12-18T00:00:49Z DEBUG Starting external process
+2022-12-18T00:00:49Z DEBUG args=['/bin/systemctl', 'enable', 'sssd.service']
+2022-12-18T00:00:50Z DEBUG Process finished, return code=0
+2022-12-18T00:00:50Z DEBUG stdout=
+2022-12-18T00:00:50Z DEBUG stderr=
+2022-12-18T00:00:50Z DEBUG Backing up system configuration file '/etc/openldap/ldap.conf'
+2022-12-18T00:00:50Z DEBUG Saving Index File to '/var/lib/ipa-client/sysrestore/sysrestore.index'
+2022-12-18T00:00:50Z DEBUG Updating configuration file /etc/openldap/ldap.conf
+2022-12-18T00:00:50Z DEBUG # File modified by ipa-client-install
+
+# We do not want to break your existing configuration, hence:
+#   URI, BASE, and SASL_MECH
+#   have been added if they were not set.
+#   In case any of them were set, a comment has been inserted and
+#   "# CONF_NAME modified by IPA" added to the line above.
+# To use IPA server with openLDAP tools, please comment out your
+# existing configuration for these options and uncomment the
+# corresponding lines generated by IPA.
+
+
+#
+# LDAP Defaults
+#
+
+# See ldap.conf(5) for details
+# This file should be world readable but not world writable.
+
+#BASE	dc=example,dc=com
+#URI	ldap://ldap.example.com ldap://ldap-master.example.com:666
+
+#SIZELIMIT	12
+#TIMELIMIT	15
+#DEREF		never
+
+# When no CA certificates are specified the Shared System Certificates
+# are in use. In order to have these available along with the ones specified
+# by TLS_CACERTDIR one has to include them explicitly:
+#TLS_CACERT	/etc/pki/tls/cert.pem
+
+# System-wide Crypto Policies provide up to date cipher suite which should
+# be used unless one needs a finer grinded selection of ciphers. Hence, the
+# PROFILE=SYSTEM value represents the default behavior which is in place
+# when no explicit setting is used. (see openssl-ciphers(1) for more info)
+#TLS_CIPHER_SUITE PROFILE=SYSTEM
+
+# Turning this off breaks GSSAPI used with krb5 when rdns = false
+SASL_NOCANON	on
+
+URI ldaps://master.redacted_domain.com
+BASE dc=redacted_domain,dc=com
+SASL_MECH GSSAPI
+
+2022-12-18T00:00:50Z INFO Configured /etc/openldap/ldap.conf
+2022-12-18T00:00:51Z DEBUG Loading Index file from '/var/lib/ipa-client/sysrestore/sysrestore.index'
+2022-12-18T00:00:51Z DEBUG Backing up system configuration file '/etc/ssh/ssh_config'
+2022-12-18T00:00:51Z DEBUG Saving Index File to '/var/lib/ipa-client/sysrestore/sysrestore.index'
+2022-12-18T00:00:51Z INFO Configured /etc/ssh/ssh_config
+2022-12-18T00:00:51Z DEBUG Backing up system configuration file '/etc/ssh/sshd_config'
+2022-12-18T00:00:51Z DEBUG Saving Index File to '/var/lib/ipa-client/sysrestore/sysrestore.index'
+2022-12-18T00:00:51Z INFO Configured /etc/ssh/sshd_config.d/04-ipa.conf
+2022-12-18T00:00:51Z DEBUG Starting external process
+2022-12-18T00:00:51Z DEBUG args=['/bin/systemctl', 'is-active', 'sshd.service']
+2022-12-18T00:00:51Z DEBUG Process finished, return code=0
+2022-12-18T00:00:51Z DEBUG stdout=active
+
+2022-12-18T00:00:51Z DEBUG stderr=
+2022-12-18T00:00:51Z DEBUG Starting external process
+2022-12-18T00:00:51Z DEBUG args=['/bin/systemctl', 'restart', 'sshd.service']
+2022-12-18T00:00:52Z DEBUG Process finished, return code=0
+2022-12-18T00:00:52Z DEBUG stdout=
+2022-12-18T00:00:52Z DEBUG stderr=
+2022-12-18T00:00:52Z DEBUG Starting external process
+2022-12-18T00:00:52Z DEBUG args=['/bin/systemctl', 'is-active', 'sshd.service']
+2022-12-18T00:00:52Z DEBUG Process finished, return code=0
+2022-12-18T00:00:52Z DEBUG stdout=active
+
+2022-12-18T00:00:52Z DEBUG stderr=
+2022-12-18T00:00:52Z DEBUG Restart of sshd.service complete
+2022-12-18T00:00:54Z DEBUG Loading StateFile from '/var/lib/ipa-client/sysrestore/sysrestore.state'
+2022-12-18T00:00:54Z INFO Configuring redacted_domain.com as NIS domain.
+2022-12-18T00:00:54Z DEBUG Starting external process
+2022-12-18T00:00:54Z DEBUG args=['/usr/bin/nisdomainname']
+2022-12-18T00:00:54Z DEBUG Process finished, return code=1
+2022-12-18T00:00:54Z DEBUG stdout=nisdomainname: Local domain name not set
+
+2022-12-18T00:00:54Z DEBUG stderr=
+2022-12-18T00:00:54Z DEBUG Loading StateFile from '/var/lib/ipa-client/sysrestore/sysrestore.state'
+2022-12-18T00:00:54Z DEBUG Saving StateFile to '/var/lib/ipa-client/sysrestore/sysrestore.state'
+2022-12-18T00:00:54Z DEBUG Starting external process
+2022-12-18T00:00:54Z DEBUG args=['/bin/systemctl', 'is-enabled', 'nis-domainname.service']
+2022-12-18T00:00:54Z DEBUG Process finished, return code=1
+2022-12-18T00:00:54Z DEBUG stdout=disabled
+
+2022-12-18T00:00:54Z DEBUG stderr=
+2022-12-18T00:00:54Z DEBUG Loading StateFile from '/var/lib/ipa-client/sysrestore/sysrestore.state'
+2022-12-18T00:00:54Z DEBUG Saving StateFile to '/var/lib/ipa-client/sysrestore/sysrestore.state'
+2022-12-18T00:00:54Z DEBUG Starting external process
+2022-12-18T00:00:54Z DEBUG args=['/bin/systemctl', 'enable', 'nis-domainname.service']
+2022-12-18T00:00:55Z DEBUG Process finished, return code=0
+2022-12-18T00:00:55Z DEBUG stdout=
+2022-12-18T00:00:55Z DEBUG stderr=Created symlink /etc/systemd/system/sysinit.target.wants/nis-domainname.service → /usr/lib/systemd/system/nis-domainname.service.
+
+2022-12-18T00:00:55Z DEBUG Starting external process
+2022-12-18T00:00:55Z DEBUG args=['/bin/systemctl', 'restart', 'nis-domainname.service']
+2022-12-18T00:00:55Z DEBUG Process finished, return code=0
+2022-12-18T00:00:55Z DEBUG stdout=
+2022-12-18T00:00:55Z DEBUG stderr=
+2022-12-18T00:00:55Z DEBUG Starting external process
+2022-12-18T00:00:55Z DEBUG args=['/bin/systemctl', 'is-active', 'nis-domainname.service']
+2022-12-18T00:00:55Z DEBUG Process finished, return code=0
+2022-12-18T00:00:55Z DEBUG stdout=active
+
+2022-12-18T00:00:55Z DEBUG stderr=
+2022-12-18T00:00:55Z DEBUG Restart of nis-domainname.service complete

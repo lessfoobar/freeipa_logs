@@ -1,0 +1,44 @@
+2022-12-18T00:04:07Z DEBUG svmem(total=8307068928, available=7617048576, percent=8.3, used=427220992, free=6772924416, active=500350976, inactive=680726528, buffers=5562368, cached=1101361152, shared=2469888, slab=154329088)
+2022-12-18T00:04:07Z DEBUG Available memory is 7617048576B
+2022-12-18T00:04:07Z DEBUG Searching for an interface of IP address: ::1
+2022-12-18T00:04:07Z DEBUG Testing local IP address: ::1/128 (interface: lo)
+2022-12-18T00:04:07Z DEBUG Starting external process
+2022-12-18T00:04:07Z DEBUG args=['/usr/sbin/selinuxenabled']
+2022-12-18T00:04:07Z DEBUG Process finished, return code=0
+2022-12-18T00:04:07Z DEBUG stdout=
+2022-12-18T00:04:07Z DEBUG stderr=
+2022-12-18T00:04:07Z DEBUG Loading StateFile from '/var/lib/ipa/sysrestore/sysrestore.state'
+2022-12-18T00:04:07Z DEBUG Loading Index file from '/var/lib/ipa/sysrestore/sysrestore.index'
+2022-12-18T00:04:07Z DEBUG httpd is not configured
+2022-12-18T00:04:07Z DEBUG kadmin is not configured
+2022-12-18T00:04:07Z DEBUG dirsrv is not configured
+2022-12-18T00:04:07Z DEBUG pki-tomcatd is not configured
+2022-12-18T00:04:07Z DEBUG install is not configured
+2022-12-18T00:04:07Z DEBUG krb5kdc is not configured
+2022-12-18T00:04:07Z DEBUG named is not configured
+2022-12-18T00:04:07Z DEBUG filestore is tracking no files
+2022-12-18T00:04:07Z DEBUG Starting external process
+2022-12-18T00:04:07Z DEBUG args=['/bin/systemctl', 'is-enabled', 'ntpd.service']
+2022-12-18T00:04:07Z DEBUG Process finished, return code=1
+2022-12-18T00:04:07Z DEBUG stdout=
+2022-12-18T00:04:07Z DEBUG stderr=Failed to get unit file state for ntpd.service: No such file or directory
+
+2022-12-18T00:04:07Z DEBUG Starting external process
+2022-12-18T00:04:07Z DEBUG args=['/bin/systemctl', 'is-active', 'ntpd.service']
+2022-12-18T00:04:07Z DEBUG Process finished, return code=3
+2022-12-18T00:04:07Z DEBUG stdout=inactive
+
+2022-12-18T00:04:07Z DEBUG stderr=
+2022-12-18T00:04:07Z DEBUG Starting external process
+2022-12-18T00:04:07Z DEBUG args=['/bin/systemctl', 'is-enabled', 'systemd-timesyncd.service']
+2022-12-18T00:04:07Z DEBUG Process finished, return code=1
+2022-12-18T00:04:07Z DEBUG stdout=disabled
+
+2022-12-18T00:04:07Z DEBUG stderr=
+2022-12-18T00:04:07Z DEBUG Starting external process
+2022-12-18T00:04:07Z DEBUG args=['/bin/systemctl', 'is-active', 'systemd-timesyncd.service']
+2022-12-18T00:04:08Z DEBUG Process finished, return code=3
+2022-12-18T00:04:08Z DEBUG stdout=inactive
+
+2022-12-18T00:04:08Z DEBUG stderr=
+2022-12-18T00:04:08Z DEBUG Loading Index file from '/var/lib/ipa-client/sysrestore/sysrestore.index'

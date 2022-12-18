@@ -1,0 +1,47 @@
+2022-12-18T00:04:12Z INFO This program will set up FreeIPA client.
+2022-12-18T00:04:12Z INFO Version 4.10.1
+2022-12-18T00:04:12Z INFO 
+2022-12-18T00:04:12Z DEBUG Starting external process
+2022-12-18T00:04:12Z DEBUG args=['/usr/sbin/selinuxenabled']
+2022-12-18T00:04:12Z DEBUG Process finished, return code=0
+2022-12-18T00:04:12Z DEBUG stdout=
+2022-12-18T00:04:12Z DEBUG stderr=
+2022-12-18T00:04:12Z DEBUG Starting external process
+2022-12-18T00:04:12Z DEBUG args=['/bin/systemctl', 'is-enabled', 'ntpd.service']
+2022-12-18T00:04:12Z DEBUG Process finished, return code=1
+2022-12-18T00:04:12Z DEBUG stdout=
+2022-12-18T00:04:12Z DEBUG stderr=Failed to get unit file state for ntpd.service: No such file or directory
+
+2022-12-18T00:04:12Z DEBUG Starting external process
+2022-12-18T00:04:12Z DEBUG args=['/bin/systemctl', 'is-active', 'ntpd.service']
+2022-12-18T00:04:12Z DEBUG Process finished, return code=3
+2022-12-18T00:04:12Z DEBUG stdout=inactive
+
+2022-12-18T00:04:12Z DEBUG stderr=
+2022-12-18T00:04:12Z DEBUG Starting external process
+2022-12-18T00:04:12Z DEBUG args=['/bin/systemctl', 'is-enabled', 'systemd-timesyncd.service']
+2022-12-18T00:04:12Z DEBUG Process finished, return code=1
+2022-12-18T00:04:12Z DEBUG stdout=disabled
+
+2022-12-18T00:04:12Z DEBUG stderr=
+2022-12-18T00:04:12Z DEBUG Starting external process
+2022-12-18T00:04:12Z DEBUG args=['/bin/systemctl', 'is-active', 'systemd-timesyncd.service']
+2022-12-18T00:04:12Z DEBUG Process finished, return code=3
+2022-12-18T00:04:12Z DEBUG stdout=inactive
+
+2022-12-18T00:04:12Z DEBUG stderr=
+2022-12-18T00:04:12Z DEBUG Deleting invalid keytab: '/etc/krb5.keytab'.
+2022-12-18T00:04:12Z DEBUG [IPA Discovery]
+2022-12-18T00:04:12Z DEBUG Starting IPA discovery with domain=redacted_domain.com, servers=None, hostname=ca-replica.local
+2022-12-18T00:04:12Z DEBUG Search for LDAP SRV record in redacted_domain.com
+2022-12-18T00:04:12Z DEBUG Search DNS for SRV record of _ldap._tcp.redacted_domain.com
+2022-12-18T00:04:12Z DEBUG DNS record not found: NoAnswer
+2022-12-18T00:04:12Z DEBUG No LDAP server found
+2022-12-18T00:04:12Z DEBUG No LDAP server found
+2022-12-18T00:04:12Z DEBUG [IPA Discovery]
+2022-12-18T00:04:12Z DEBUG Starting IPA discovery with domain=redacted_domain.com, servers=None, hostname=ca-replica.local
+2022-12-18T00:04:12Z DEBUG Search for LDAP SRV record in redacted_domain.com
+2022-12-18T00:04:12Z DEBUG Search DNS for SRV record of _ldap._tcp.redacted_domain.com
+2022-12-18T00:04:12Z DEBUG DNS record not found: NoAnswer
+2022-12-18T00:04:12Z DEBUG No LDAP server found
+2022-12-18T00:04:12Z DEBUG IPA Server not found
