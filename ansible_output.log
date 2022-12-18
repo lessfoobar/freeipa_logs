@@ -1,0 +1,329 @@
+
+PLAY [Install IPA servers] *****************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaserver : Import variables specific to distribution] ***
+ok: [master.redacted_domain.com] => (item=/home/lessfoobar/.ansible/collections/ansible_collections/freeipa/ansible_freeipa/roles/ipaserver/vars/Fedora.yml)
+
+TASK [freeipa.ansible_freeipa.ipaserver : Install IPA server] ******************
+included: /home/lessfoobar/.ansible/collections/ansible_collections/freeipa/ansible_freeipa/roles/ipaserver/tasks/install.yml for master.redacted_domain.com
+
+TASK [freeipa.ansible_freeipa.ipaserver : Install - Ensure that IPA server packages are installed] ***
+changed: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaserver : Install - Ensure that IPA server packages for dns are installed] ***
+changed: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaserver : Install - Ensure that IPA server packages for adtrust are installed] ***
+skipping: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaserver : Install - Ensure that firewall packages installed] ***
+ok: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaserver : Firewalld service - Ensure that firewalld is running] ***
+ok: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaserver : Firewalld - Verify runtime zone "public"] ***
+changed: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaserver : Firewalld - Verify permanent zone "public"] ***
+changed: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaserver : include_tasks] ***********************
+skipping: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaserver : Install - Server installation test] ***
+ok: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaserver : Install - Master password creation] ***
+changed: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaserver : Install - Use new master password] ***
+ok: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaserver : Install - Server preparation] ********
+changed: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaserver : Install - Setup NTP] *****************
+changed: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaserver : Install - Setup DS] ******************
+changed: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaserver : Install - Setup KRB] *****************
+changed: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaserver : Install - Setup custodia] ************
+changed: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaserver : Install - Setup CA] ******************
+changed: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaserver : Copy /root/ipa.csr to "master.redacted_domain.com-ipa.csr"] ***
+skipping: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaserver : Install - Setup otpd] ****************
+changed: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaserver : Install - Setup HTTP] ****************
+changed: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaserver : Install - Setup KRA] *****************
+changed: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaserver : Install - Setup DNS] *****************
+changed: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaserver : Install - Setup ADTRUST] *************
+changed: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaserver : Install - Set DS password] ***********
+changed: [master.redacted_domain.com]
+
+TASK [Install - Setup client] **************************************************
+
+TASK [freeipa.ansible_freeipa.ipaclient : Import variables specific to distribution] ***
+ok: [master.redacted_domain.com] => (item=/home/lessfoobar/.ansible/collections/ansible_collections/freeipa/ansible_freeipa/roles/ipaclient/vars/default.yml)
+
+TASK [freeipa.ansible_freeipa.ipaclient : Install IPA client] ******************
+included: /home/lessfoobar/.ansible/collections/ansible_collections/freeipa/ansible_freeipa/roles/ipaclient/tasks/install.yml for master.redacted_domain.com
+
+TASK [freeipa.ansible_freeipa.ipaclient : Install - Ensure that IPA client packages are installed] ***
+skipping: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : Install - Set ipaclient_servers] *****
+skipping: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : Install - Set ipaclient_servers from cluster inventory] ***
+skipping: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : Install - Check that either password or keytab is set] ***
+skipping: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : Install - Set default principal if no keytab is given] ***
+ok: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : Install - Fail on missing ipaclient_domain and ipaserver_domain] ***
+skipping: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : Install - Fail on missing ipaclient_servers] ***
+skipping: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : Install - Configure DNS resolver] ****
+skipping: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : Install - IPA client test] ***********
+ok: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : Install - Cleanup leftover ccache] ***
+ok: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : Install - Configure NTP] *************
+ok: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : Install - Make sure One-Time Password is enabled if it's already defined] ***
+skipping: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : Install - Disable One-Time Password for on_master] ***
+skipping: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : Install - Test if IPA client has working krb5.keytab] ***
+ok: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : Install - Disable One-Time Password for client with working krb5.keytab] ***
+skipping: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : Install - Keytab or password is required for getting otp] ***
+skipping: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : Install - Create temporary file for keytab] ***
+skipping: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : Install - Copy keytab to server temporary file] ***
+skipping: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : Install - Get One-Time Password for client enrollment] ***
+skipping: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : Install - Report error for OTP generation] ***
+skipping: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : Install - Store the previously obtained OTP] ***
+skipping: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : Install - Remove keytab temporary file] ***
+skipping: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : Store predefined OTP in admin_password] ***
+skipping: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : Install - Check if principal and keytab are set] ***
+skipping: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : Install - Check if one of password or keytabs are set] ***
+skipping: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : Install - Purge redacted_domain.COM from host keytab] ***
+skipping: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : Install - Backup and set hostname] ***
+skipping: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : Install - Join IPA] ******************
+skipping: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : krb5 configuration not correct] ******
+skipping: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : IPA test failed] *********************
+skipping: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : ca.crt file is missing] **************
+skipping: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : Install - Configure IPA default.conf] ***
+skipping: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : Install - Configure SSSD] ************
+changed: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : Install - Configure krb5 for IPA realm] ***
+skipping: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : Install - IPA API calls for remaining enrollment parts] ***
+changed: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : Install - Fix IPA ca] ****************
+skipping: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : Install - Create IPA NSS database] ***
+changed: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : Install - Configure SSH and SSHD] ****
+changed: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : Install - Configure automount] *******
+changed: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : Install - Configure firefox] *********
+skipping: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : Install - Configure NIS] *************
+changed: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : Install - Restore original admin password if overwritten by OTP] ***
+skipping: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : Cleanup leftover ccache] *************
+ok: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : Uninstall IPA client] ****************
+skipping: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaserver : Install - Enable IPA] ****************
+changed: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaserver : Install - Cleanup root IPA cache] ****
+ok: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaserver : Install - Configure firewalld] *******
+changed: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaserver : Install - Configure firewalld runtime] ***
+changed: [master.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaserver : Cleanup temporary files] *************
+ok: [master.redacted_domain.com] => (item=/etc/ipa/.tmp_pkcs12_dirsrv)
+ok: [master.redacted_domain.com] => (item=/etc/ipa/.tmp_pkcs12_http)
+ok: [master.redacted_domain.com] => (item=/etc/ipa/.tmp_pkcs12_pkinit)
+
+TASK [freeipa.ansible_freeipa.ipaserver : Uninstall IPA server] ****************
+skipping: [master.redacted_domain.com]
+
+PLAY [Install IPA replicas] ****************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [ca-replica.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipareplica : Import variables specific to distribution] ***
+ok: [ca-replica.redacted_domain.com] => (item=/home/lessfoobar/.ansible/collections/ansible_collections/freeipa/ansible_freeipa/roles/ipareplica/vars/Fedora.yml)
+
+TASK [freeipa.ansible_freeipa.ipareplica : Install IPA replica] ****************
+included: /home/lessfoobar/.ansible/collections/ansible_collections/freeipa/ansible_freeipa/roles/ipareplica/tasks/install.yml for ca-replica.redacted_domain.com
+
+TASK [freeipa.ansible_freeipa.ipareplica : Install - Ensure IPA replica packages are installed] ***
+changed: [ca-replica.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipareplica : Install - Ensure IPA replica packages for dns are installed] ***
+changed: [ca-replica.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipareplica : Install - Ensure IPA replica packages for adtrust are installed] ***
+skipping: [ca-replica.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipareplica : Install - Ensure that firewall packages installed] ***
+ok: [ca-replica.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipareplica : Firewalld service - Ensure that firewalld is running] ***
+ok: [ca-replica.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipareplica : Firewalld - Verify runtime zone "public"] ***
+changed: [ca-replica.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipareplica : Firewalld - Verify permanent zone "public"] ***
+changed: [ca-replica.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipareplica : Install - Set ipareplica_servers] ***
+skipping: [ca-replica.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipareplica : Install - Set default principal if no keytab is given] ***
+ok: [ca-replica.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipareplica : Install - Replica installation test] ***
+ok: [ca-replica.redacted_domain.com]
+
+TASK [Install - Setup client] **************************************************
+
+TASK [freeipa.ansible_freeipa.ipaclient : Import variables specific to distribution] ***
+ok: [ca-replica.redacted_domain.com] => (item=/home/lessfoobar/.ansible/collections/ansible_collections/freeipa/ansible_freeipa/roles/ipaclient/vars/default.yml)
+
+TASK [freeipa.ansible_freeipa.ipaclient : Install IPA client] ******************
+included: /home/lessfoobar/.ansible/collections/ansible_collections/freeipa/ansible_freeipa/roles/ipaclient/tasks/install.yml for ca-replica.redacted_domain.com
+
+TASK [freeipa.ansible_freeipa.ipaclient : Install - Ensure that IPA client packages are installed] ***
+ok: [ca-replica.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : Install - Set ipaclient_servers] *****
+skipping: [ca-replica.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : Install - Set ipaclient_servers from cluster inventory] ***
+skipping: [ca-replica.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : Install - Check that either password or keytab is set] ***
+skipping: [ca-replica.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : Install - Set default principal if no keytab is given] ***
+skipping: [ca-replica.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : Install - Fail on missing ipaclient_domain and ipaserver_domain] ***
+skipping: [ca-replica.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : Install - Fail on missing ipaclient_servers] ***
+skipping: [ca-replica.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : Install - Configure DNS resolver] ****
+skipping: [ca-replica.redacted_domain.com]
+
+TASK [freeipa.ansible_freeipa.ipaclient : Install - IPA client test] ***********
+fatal: [ca-replica.redacted_domain.com]: FAILED! => {"changed": false, "msg": "Unable to find IPA Server to join"}
+
+TASK [freeipa.ansible_freeipa.ipareplica : Cleanup temporary files] ************
+ok: [ca-replica.redacted_domain.com] => (item=/etc/ipa/.tmp_pkcs12_dirsrv)
+ok: [ca-replica.redacted_domain.com] => (item=/etc/ipa/.tmp_pkcs12_http)
+ok: [ca-replica.redacted_domain.com] => (item=/etc/ipa/.tmp_pkcs12_pkinit)
+
+PLAY RECAP *********************************************************************
+ca-replica.redacted_domain.com  : ok=15   changed=4    unreachable=0    failed=1    skipped=9    rescued=0    ignored=0   
+master.redacted_domain.com   : ok=43   changed=26   unreachable=0    failed=0    skipped=36   rescued=0    ignored=0   
+
